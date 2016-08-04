@@ -6,7 +6,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/client/person/Item.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/client/person/Person.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/client/person/Stats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/server/ServerLoader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/map/DepthVector.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/map/DepthVector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/server/GameServer.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/server/GameServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/Game.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/Game.class" />
@@ -37,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/game/client/Game.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -487,7 +486,8 @@
     <MESSAGE value="v3.1.0&#10;Небольшие изменения в организации пакетов" />
     <MESSAGE value="v3.2.0&#10;DepthVector теперь привязан к конкретному MapControl.&#10;TCPGameSend удалён." />
     <MESSAGE value="v3.3.0&#10;Теперь чанки создаются только при необходимости.&#10;Это позволяет делать большие карты." />
-    <option name="LAST_COMMIT_MESSAGE" value="v3.3.0&#10;Теперь чанки создаются только при необходимости.&#10;Это позволяет делать большие карты." />
+    <MESSAGE value="v1.1.0&#10;ServerLoader позволяет загружать сервер отдельным потоком из клиента." />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1.0&#10;ServerLoader позволяет загружать сервер отдельным потоком из клиента." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,7 +565,7 @@
     <entry file="file://$PROJECT_DIR$/src/game/client/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding />
         </state>
       </provider>
