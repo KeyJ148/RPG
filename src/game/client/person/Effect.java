@@ -4,7 +4,7 @@ public class Effect {
     public Stats addition = new Stats();//Увеличение характеристик (+)
     public Stats multi = new Stats(1);//Увеличение характеристик (*)
     
-    public Stats calcAddStats(Stats stats){
+    public void calcAddStats(Stats stats){
         stats.maxHp += addition.maxHp; stats.maxMp += addition.maxMp;
         stats.pDmg += addition.pDmg; stats.mDmg += addition.mDmg;
         stats.pDef += addition.pDef; stats.mDef += addition.mDef;
@@ -16,11 +16,9 @@ public class Effect {
         stats.speedCasting += addition.speedCasting; stats.speedReload += addition.speedReload;
         stats.speedRun += addition.speedRun;
         stats.loadCapacity += addition.loadCapacity;
-        
-        return stats;
     }
 
-    public Stats calcMultiStats(Stats stats){
+    public void calcMultiStats(Stats stats){
         stats.maxHp *= multi.maxHp; stats.maxMp *= multi.maxMp;
         stats.pDmg *= multi.pDmg; stats.mDmg *= multi.mDmg;
         stats.pDef *= multi.pDef; stats.mDef *= multi.mDef;
@@ -32,7 +30,5 @@ public class Effect {
         stats.speedCasting *= multi.speedCasting; stats.speedReload *= multi.speedReload;
         stats.speedRun *= multi.speedRun;
         stats.loadCapacity *= multi.loadCapacity;
-        
-        return stats;
     }
 }
