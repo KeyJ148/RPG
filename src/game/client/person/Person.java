@@ -107,4 +107,7 @@ public class Person extends Obj {
 
         return null;
     }
+
+    @Override
+    public void directionDrawEqulas(){}//Ибо персонаж смотрит в сторону атаки, а движется при этом в любую сторону
 }

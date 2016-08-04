@@ -5,7 +5,7 @@ import engine.io.KeyboardHandler;
 import engine.map.Room;
 import engine.obj.ObjLight;
 import game.client.person.Item;
-import game.client.person.Person;
+import game.client.person.Player;
 import game.server.ServerLoader;
 import org.lwjgl.input.Keyboard;
 
@@ -25,7 +25,7 @@ public class Game {
 		Global.room.objAdd(obj);
 		Global.room.objAdd(obj1);
 
-        Person p = new Person(Integer.MAX_VALUE/2+100,Integer.MAX_VALUE/2+100,90,TextureManager.cursor);
+        Player p = new Player(Integer.MAX_VALUE/2+100,Integer.MAX_VALUE/2+100,90);
         Global.room.objAdd(p);
         p.addItem(new Item(Item.Grade.GRAY, Item.Type.HELMET));
         Item item = new Item(Item.Grade.GREEN, Item.Type.HELMET);
