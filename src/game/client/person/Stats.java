@@ -10,7 +10,7 @@ public class Stats {
     public double pFactorCrit, mFactorCrit;
     public int accuracy, evasion;
     public double speedCasting, speedReload;
-    public double speedRun;
+    public int speedRun;
     public int loadCapacity;
 
     public Stats(){

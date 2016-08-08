@@ -167,6 +167,12 @@ public class GameServer{
 		}
 	}
 
+	public static void sendAll(int type, String str){
+		for(int i=0; i<peopleMax; i++){//Отправляем сообщение всем
+			GameServer.send(i, type, str);
+		}
+	}
+
 	public static void error(String s){
 		System.out.println("[ERROR] " + s);
 	}

@@ -37,7 +37,7 @@ public class Person extends Obj {
         increment.pFactorCrit = 0.01; increment.mFactorCrit = 0.01;
         increment.accuracy = 1; increment.evasion = 1;
         increment.speedCasting = 0.5; increment.speedReload = 0.5;
-        increment.speedRun = 0.05;
+        increment.speedRun = 2;
         increment.loadCapacity = 2;
     }
 
@@ -53,7 +53,7 @@ public class Person extends Obj {
         statsDefault.pFactorCrit = 1.5; statsDefault.mFactorCrit = 1.5;
         statsDefault.accuracy = 100; statsDefault.evasion = 30;
         statsDefault.speedCasting = 100; statsDefault.speedReload = 100;
-        statsDefault.speedRun = 2.5;
+        statsDefault.speedRun = 100;//Пикселей в секунду
         statsDefault.loadCapacity = 50;
 
         calcStats();
