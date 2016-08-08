@@ -155,7 +155,7 @@ public class GameServer{
 			}
 			numberSend[id]++; //Кол-во отправленных пакетов
 		} catch (IOException e) {
-			GameServer.error("Send message failed");
+			if (!GameServer.serverRead[id].disconnect) GameServer.error("Send message failed");
 		}
 	}
 
@@ -166,7 +166,7 @@ public class GameServer{
 			}
 		}
 	}
-
+	
 	public static void sendAll(int type, String str){
 		for(int i=0; i<peopleMax; i++){//Отправляем сообщение всем
 			GameServer.send(i, type, str);

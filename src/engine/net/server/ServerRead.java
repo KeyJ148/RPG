@@ -5,7 +5,8 @@ import java.io.IOException;
 public class ServerRead extends Thread{
 
 	private int id; //номер соединения в массиве в gameServer
-	
+	public boolean disconnect = false;//Отключён ли этот игрок
+
 	public ServerRead(int id){
 		this.id = id;
 		start();
