@@ -1,6 +1,8 @@
 package engine.inf.examples;
 
+import engine.Global;
 import engine.image.TextureHandler;
+import engine.inf.Inf;
 import engine.inf.TableAccordKey;
 import engine.io.KeyboardHandler;
 import engine.io.MouseHandler;
@@ -9,7 +11,7 @@ import org.lwjgl.input.Keyboard;
 
 public class TextBox extends Label{
 
-    public boolean active = true;//Можно ли вводить в поле символы в данный момент?
+    public boolean active = false;//Можно ли вводить в поле символы в данный момент?
 
     public TextBox(int x, int y, int width, int height, TextureHandler texture){
         super(x, y, width, height, texture);
@@ -35,7 +37,20 @@ public class TextBox extends Label{
                 }
             }
             KeyboardHandler.lock();
-            MouseHandler.lock();
+        } else {
+            if (MouseHandler.mouseX > x-width/2 && MouseHandler.mouseX < x+width/2 &&
+                    MouseHandler.mouseY > y-height/2 && MouseHandler.mouseY < y+height &&
+                    MouseHandler.mouseDown1){
+                allDeactivation();
+                active = true;
+                MouseHandler.lock();
+            }
+        }
+    }
+
+    private void allDeactivation(){
+        for (Inf inf : Global.infMain.infs){
+            if ((inf instanceof TextBox) && (!inf.equals(this))) ((TextBox) inf).active = false;
         }
     }
 }

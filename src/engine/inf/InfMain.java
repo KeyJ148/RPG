@@ -11,8 +11,11 @@ public class InfMain {
         //Перебирать начинаем с самого верхнего окна (Минимальная глубина)
         //Объекты в массиве рассположены по глубине, первый объект -- самый глубокий
         //Перебор массива осуществляется в обратном порядке, с самых верхних элементов
-        for (int i=infs.size()-1; i >= 0; i--)
-            infs.get(i).update();
+        for (int i=infs.size()-1; i >= 0; i--){
+            Inf inf = infs.get(i);
+            if (!inf.delete) inf.update();
+            else infs.remove(i);
+        }
     }
 
     public void draw(){

@@ -16,6 +16,17 @@ public class TextureManager {
 	public static TextureHandler background_grass;
 	public static TextureHandler background_sand;
 
+	public static TextureHandler home_1;
+	public static TextureHandler home_2;
+	public static TextureHandler tree;
+
+	public static TextureHandler button;
+	public static TextureHandler item;
+	public static TextureHandler window;
+
+	public static TextureHandler skill_1;
+	public static TextureHandler skill_2;
+
 	//Для функций
 	public static final String pathImage = "res/image/";
 	public static final String pathAnim = "res/animation/";
@@ -33,6 +44,17 @@ public class TextureManager {
 
 		TextureManager.background_grass = new TextureHandler(pathImage + "Background/grass.png");
 		TextureManager.background_sand = new TextureHandler(pathImage + "Background/sand.png");
+
+		TextureManager.home_1 = new TextureHandler(pathImage + "Home/home_1.png");;
+		TextureManager.home_2 = new TextureHandler(pathImage + "Home/home_2.png");;
+		TextureManager.tree = new TextureHandler(pathImage + "Home/tree.png");;
+
+		TextureManager.button = new TextureHandler(pathImage + "Interface/button.png");;
+		TextureManager.item = new TextureHandler(pathImage + "Interface/item.png");;
+		TextureManager.window = new TextureHandler(pathImage + "Interface/window.png");;
+
+		TextureManager.skill_1 = new TextureHandler(pathImage + "Skill/skill_1.png");;
+		TextureManager.skill_2 = new TextureHandler(pathImage + "Skill/skill_2.png");;
 	}
 	
 	public static TextureHandler[] parseAnimation(String path){

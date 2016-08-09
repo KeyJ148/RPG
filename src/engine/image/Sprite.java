@@ -7,8 +7,8 @@ public class Sprite implements Rendering{
 	
     private TextureHandler textureHandler;
     private Color color = Color.white;
-    public int scale_x = 1;
-    public int scale_y = 1;
+    public double scale_x = 1;
+    public double scale_y = 1;
     
     public Sprite(TextureHandler textureHandler) {
 		this.textureHandler = textureHandler;
@@ -48,8 +48,8 @@ public class Sprite implements Rendering{
     	direction = Math.toDegrees(direction);
     	
     	int width=(int)(getWidth()*scale_x); 
-        int height=(int)(getHeight()*scale_y); 
-    	
+        int height=(int)(getHeight()*scale_y);
+
         GL11.glLoadIdentity();     
 	    GL11.glTranslatef(x, y, 0);
 	    GL11.glRotatef(Math.round(-direction), 0f, 0f, 1f);
