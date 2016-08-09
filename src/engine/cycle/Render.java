@@ -3,7 +3,7 @@ package engine.cycle;
 import engine.Global;
 import engine.io.KeyboardHandler;
 import engine.io.MouseHandler;
-import engine.title.Title;
+import engine.inf.title.Title;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;

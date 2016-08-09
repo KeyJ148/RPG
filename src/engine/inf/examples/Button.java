@@ -1,4 +1,4 @@
-package engine.inf;
+package engine.inf.examples;
 
 import engine.image.TextureHandler;
 import engine.io.KeyboardHandler;

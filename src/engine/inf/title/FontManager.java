@@ -1,4 +1,4 @@
-package engine.title;
+package engine.inf.title;
 
 import java.awt.Font;
 import java.util.ArrayList;

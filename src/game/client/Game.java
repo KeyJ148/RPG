@@ -6,13 +6,14 @@ import engine.map.Room;
 import engine.obj.ObjLight;
 import game.client.person.Item;
 import game.client.person.Player;
+import game.server.ServerLoader;
 import org.lwjgl.input.Keyboard;
 
 public class Game {
 
 	public void init() {
 		//Engine: »нициализаци€ игры перед запуском главного цикла
-		//new ServerLoader(25566, 1, false);
+		new ServerLoader(25566, 1, false);
 
 		Global.tcpControl.connect("127.0.0.1", 25566);
 		Global.tcpRead.start();
@@ -33,6 +34,8 @@ public class Game {
         System.out.println(p.addItem(item));
         p.calcStats();
         System.out.println(p.stats.maxHp);
+
+
 	}
 	
 	public void update(long delta){

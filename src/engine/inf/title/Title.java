@@ -1,18 +1,18 @@
-package engine.title;
-
-import java.awt.Font;
+package engine.inf.title;
 
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.TrueTypeFont;
+import java.awt.Font;
+
 
 public class Title {
 	
 	public static final int BOLD = 0;
 	
-	private final Color defaultColor = Color.black;
-	private final int defaultSize = 12;
-	private final int defaultFont = Font.PLAIN;
+	public static final Color defaultColor = Color.black;
+	public static final int defaultSize = 12;
+	public static final int defaultFont = Font.PLAIN;
 	
 	private String str;//Что написано в строке
 	private int x;//Коры

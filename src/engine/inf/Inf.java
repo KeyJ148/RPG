@@ -7,7 +7,7 @@ public class Inf {
 
     public int x, y;
     public int width, height;
-    public double direction;
+    public double direction = Math.PI/2;
     public Sprite sprite;
 
     public Inf(int x, int y, int width, int height, TextureHandler texture){
