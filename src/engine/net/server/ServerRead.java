@@ -25,8 +25,9 @@ public class ServerRead extends Thread{
 				}
 			}
 		} catch (IOException e){
-			GameServer.error("Take message (id: " + id + ")");
+			GameServer.p("Player disconnect (id: " + id + ")");
 			GameServer.disconnect++;
+			disconnect = true;
 		}
 	}
 	

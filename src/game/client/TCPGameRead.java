@@ -2,7 +2,7 @@ package game.client;
 
 import engine.Global;
 import engine.image.Sprite;
-import game.client.person.Enemy;
+import game.client.person.Associate;
 
 public class TCPGameRead{
 
@@ -22,15 +22,15 @@ public class TCPGameRead{
 		int direction = Integer.parseInt(data[2]);
 		int id = Integer.parseInt(data[3]);
 
-		if (ClientData.enemies != null){
-			if (ClientData.enemies[id] == null){
-				ClientData.enemies[id] = new Enemy(x, y, direction, TextureManager.player);
-				Global.room.objAdd(ClientData.enemies[id]);
+		if (ClientData.associates != null){
+			if (ClientData.associates[id] == null){
+				ClientData.associates[id] = new Associate(x, y, direction);
+				Global.room.objAdd(ClientData.associates[id]);
 			}
 
-			ClientData.enemies[id].x = x;
-			ClientData.enemies[id].y = y;
-			ClientData.enemies[id].direction = direction;
+			ClientData.associates[id].x = x;
+			ClientData.associates[id].y = y;
+			ClientData.associates[id].direction = direction;
 		}
 	}
 
@@ -41,7 +41,7 @@ public class TCPGameRead{
 
 	public static void take4(String str){
 		ClientData.peopleMax = Integer.parseInt(str);
-		ClientData.enemies = new Enemy[ClientData.peopleMax];//ќдин будет пустой, соответствующий id этого клиента
+		ClientData.associates = new Associate[ClientData.peopleMax];//ќдин будет пустой, соответствующий id этого клиента
 	}
 
 }
