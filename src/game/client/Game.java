@@ -1,29 +1,38 @@
 package game.client;
 
 import engine.Global;
+import engine.image.TextureHandler;
 import engine.inf.Inf;
 import engine.inf.examples.Button;
 import engine.inf.examples.TextBox;
-import engine.image.TextureHandler;
 import engine.io.KeyboardHandler;
 import engine.map.Room;
+import engine.obj.Obj;
 import engine.obj.ObjLight;
 import game.client.person.Item;
 import game.client.person.Player;
 import game.server.ServerLoader;
 import org.lwjgl.input.Keyboard;
+import org.newdawn.slick.Color;
 
 public class Game {
 
 	public void init() {
 		//Engine: Инициализация игры перед запуском главного цикла
-		createLoginWindow();//КОСТЫЛЬ
-
 		Global.room = new Room(Integer.MAX_VALUE, Integer.MAX_VALUE);
+		createLoginWindow();//КОСТЫЛЬ
+	}
+
+	public void init2(){
+		//Global.tcpControl.connect("127.0.0.1", 25566);
+		//Global.tcpRead.start();
+
 		ObjLight obj = new ObjLight(Integer.MAX_VALUE/2,Integer.MAX_VALUE/2,90,0,TextureManager.cursor);
 		ObjLight obj1 = new ObjLight(Integer.MAX_VALUE/2-100,Integer.MAX_VALUE/2-100,90,0,TextureManager.cursor);
+		Obj obj2 = new Obj(Integer.MAX_VALUE/2+200,Integer.MAX_VALUE/2+200,0,90,0,false,TextureManager.enemy);
 		Global.room.objAdd(obj);
 		Global.room.objAdd(obj1);
+		Global.room.objAdd(obj2);
 
         Player p = new Player(Integer.MAX_VALUE/2+100,Integer.MAX_VALUE/2+100,90);
         Global.camera = p;
@@ -36,12 +45,24 @@ public class Game {
         p.calcStats();
         System.out.println(p.stats.maxHp);
 
-
+		AnimationScript as = new AnimationScript(obj2);
+		as.loadFromFile("animation/player.properties");
+		ClientData.animationScripts.add(as);
 	}
 	
 	public void update(long delta){
 		//Engine: Выполняется каждый степ перед обновлением всех игровых объектов
 		if (KeyboardHandler.isKeyDown(Keyboard.KEY_ESCAPE)) System.exit(0);
+
+		for (int i=0; i<ClientData.animationScripts.size(); i++){
+			AnimationScript as = ClientData.animationScripts.get(i);
+			if (!as.isDelete()) {
+				as.update(delta);
+			} else {
+				ClientData.animationScripts.remove(i);
+				i--;
+			}
+		}
 	}
 	
 	public void render(){
@@ -61,13 +82,21 @@ public class Game {
 		int lx = x-w/2;//Левый верхний угол
 		int ly = y-h/2;
 
-		Inf window = new Inf(x, y, w, h, TextureManager.window);
-		TextBox tb1 = new TextBox(lx+d+wf/2, ly+d+hf/2, wf, hf, TextureManager.window);
-		TextBox tb2 = new TextBox(lx+wf+d*2+wf/2, ly+d+hf/2, wf, hf, TextureManager.window);
-		TextBox tb3 = new TextBox(lx+wf*2+d*3+wf/2, ly+d+hf/2, wf, hf, TextureManager.window);
-		TextBox tb4 = new TextBox(lx+wf*3+d*4+wf/2, ly+d+hf/2, wf, hf, TextureManager.window);
-		TextBox tb5 = new TextBox(lx+wf*4+d*5+wf*2/2, ly+d+hf/2, wf*2, hf, TextureManager.window);
-		ButtonLogin bl = new ButtonLogin(lx+d+(w-2*d)/2, ly+hf+d*2+hf/2, w-2*d, hf, TextureManager.window);
+		Inf window = new Inf(x, y, w, h, TextureManager.sys_null);
+		TextBox tb1 = new TextBox(lx+d+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
+		TextBox tb2 = new TextBox(lx+wf+d*2+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
+		TextBox tb3 = new TextBox(lx+wf*2+d*3+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
+		TextBox tb4 = new TextBox(lx+wf*3+d*4+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
+		TextBox tb5 = new TextBox(lx+wf*4+d*5+wf*2/2, ly+d+hf/2, wf*2, hf, TextureManager.sys_null);
+		ButtonLogin bl = new ButtonLogin(lx+d+(w-2*d)/2, ly+hf+d*2+hf/2, w-2*d, hf, TextureManager.sys_null);
+
+		window.setFrame(new Color(0.0f, 0.0f, 1.0f));
+		tb1.setFrame(new Color(0.0f, 0.0f, 1.0f));
+		tb2.setFrame(new Color(0.0f, 0.0f, 1.0f));
+		tb3.setFrame(new Color(0.0f, 0.0f, 1.0f));
+		tb4.setFrame(new Color(0.0f, 0.0f, 1.0f));
+		tb5.setFrame(new Color(0.0f, 0.0f, 1.0f));
+		bl.setFrame(new Color(0.0f, 0.0f, 1.0f));
 
 		Global.infMain.infs.add(window);
 		Global.infMain.infs.add(tb1);
@@ -87,6 +116,7 @@ public class Game {
 
 		public ButtonLogin(int x, int y, int width, int height, TextureHandler texture){
 			super(x, y, width, height, texture);
+			this.label = "START!";
 		}
 
 		public void setListener(TextBox tb1, TextBox tb2, TextBox tb3, TextBox tb4, TextBox tb5, Inf window){
@@ -106,13 +136,14 @@ public class Game {
 				new ServerLoader(port, Integer.parseInt(tb1.label), false);
 				Global.tcpControl.connect("127.0.0.1", port);
 				Global.tcpRead.start();
-				allDelete();
-				return;
 			} else {
 				String ip = tb1.label + "." + tb2.label + "." + tb3.label + "." + tb4.label;
 				Global.tcpControl.connect(ip, port);
 				Global.tcpRead.start();
 			}
+
+			allDelete();
+			init2();
 		}
 
 		public void allDelete(){

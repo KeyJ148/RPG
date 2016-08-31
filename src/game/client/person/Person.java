@@ -93,6 +93,7 @@ public class Person extends Obj {
         for (Slot slot : slots){
             if (slot.type == newItem.type && slot.item == null){
                 slot.item = newItem;
+                calcStats();
                 return null;
             }
         }
@@ -101,6 +102,7 @@ public class Person extends Obj {
             if (slot.type == newItem.type){
                 Item lastItem = slot.item;
                 slot.item = newItem;
+                calcStats();
                 return lastItem;
             }
         }
