@@ -1,46 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ef32d60-0a86-4b44-a938-a23e09dcf4ee" name="Default" comment="v3.0.0&#10;Движок обновлён до v3.7.0&#10;Улучшено поле ввода данных для сетевой игры&#10;Исправлен вылет при подключение к серверу&#10;Добавлен класс AnimationScript&#10;Добавлен пример скрипта">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/TableAccordKey.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/examples/Button.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/examples/Label.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/examples/TextBox.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/FontManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/Title.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/AnimationScript$Script.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/AnimationScript.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/ClientData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/Game$ButtonLogin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Associate.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Effect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Item$Grade.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Item$Type.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Item.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Person$Slot.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Person.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Player.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Stats.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/server/MapGenerator$Biom.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/server/MapGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/server/PlayerData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/server/ServerData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/server/ServerLoader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/setting/animation/player.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/client/AnimationScript.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/inf/Inf.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/Inf.class" />
+    <list default="true" id="9ef32d60-0a86-4b44-a938-a23e09dcf4ee" name="Default" comment="v3.0.1&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/client/Menu.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/Game$ButtonLogin.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/Game.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/image/Interface/button.png" afterPath="$PROJECT_DIR$/res/image/Interface/button.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/image/Interface/window.png" afterPath="$PROJECT_DIR$/res/image/Interface/window.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/TextureManager.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/TextureManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/inf/Inf.java" afterPath="$PROJECT_DIR$/src/engine/inf/Inf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/ClientData.java" afterPath="$PROJECT_DIR$/src/game/client/ClientData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/Game.java" afterPath="$PROJECT_DIR$/src/game/client/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/person/Person.java" afterPath="$PROJECT_DIR$/src/game/client/person/Person.java" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <manually-removed-from-ignored>
+      <directory path="$PROJECT_DIR$/out/" />
+    </manually-removed-from-ignored>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +31,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/client/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="792">
+              <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/client/Menu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/game/TCPServerRead.java" />
         <option value="$PROJECT_DIR$/src/game/server/TCPServerSend.java" />
         <option value="$PROJECT_DIR$/src/engine/net/server/ServerSend.java" />
         <option value="$PROJECT_DIR$/src/engine/net/client/TCPRead.java" />
@@ -130,7 +115,6 @@
         <option value="$PROJECT_DIR$/src/game/server/MapGenerator.java" />
         <option value="$PROJECT_DIR$/src/game/client/person/Enemy.java" />
         <option value="$PROJECT_DIR$/src/game/server/Server.java" />
-        <option value="$PROJECT_DIR$/src/game/client/person/Player.java" />
         <option value="$PROJECT_DIR$/res/setting/main.properties" />
         <option value="$PROJECT_DIR$/src/game/client/TCPGameRead.java" />
         <option value="$PROJECT_DIR$/src/game/client/person/Associate.java" />
@@ -144,9 +128,17 @@
         <option value="$PROJECT_DIR$/src/game/client/person/Person.java" />
         <option value="$PROJECT_DIR$/src/game/client/ClientData.java" />
         <option value="$PROJECT_DIR$/src/game/client/AnimationScript.java" />
+        <option value="$PROJECT_DIR$/src/game/client/person/Player.java" />
         <option value="$PROJECT_DIR$/src/game/client/Game.java" />
+        <option value="$PROJECT_DIR$/src/game/client/Menu.java" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
@@ -187,7 +179,7 @@
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="2" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <ConfirmationsSetting value="2" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -204,9 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,10 +229,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -283,32 +268,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager" selected="Application.Loader">
     <configuration default="false" name="Loader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -434,9 +410,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2554974" sideWeight="0.50190115" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25494277" sideWeight="0.49809885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28407907" sideWeight="0.49809885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18087995" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -484,7 +461,8 @@
     <MESSAGE value="v2.4.0&#10;Движок обновлён до 3.6.0&#10;Добавлены новые текстуры" />
     <MESSAGE value="v2.5.0&#10;Движок обновлён до 3.6.0&#10;Добавлены новые текстуры" />
     <MESSAGE value="v2.6.0&#10;Движок обновлён до v3.6.4&#10;Добавлено поле ввода данных для сетевой игры&#10;В TextureManager добавлены новые спрайты" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.6.0&#10;Движок обновлён до v3.6.4&#10;Добавлено поле ввода данных для сетевой игры&#10;В TextureManager добавлены новые спрайты" />
+    <MESSAGE value="v3.0.0&#10;Движок обновлён до v3.7.0&#10;Улучшено поле ввода данных для сетевой игры&#10;Исправлен вылет при подключение к серверу&#10;Добавлен класс AnimationScript&#10;Добавлен пример скрипта" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3.0.0&#10;Движок обновлён до v3.7.0&#10;Улучшено поле ввода данных для сетевой игры&#10;Исправлен вылет при подключение к серверу&#10;Добавлен класс AnimationScript&#10;Добавлен пример скрипта" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -493,20 +471,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/game/server/MapGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/client/ClientData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/client/person/Associate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -720,18 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/client/person/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/net/client/TCPControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-176">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="199" column="26" selection-start-line="199" selection-start-column="26" selection-end-line="199" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,9 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="42" column="82" selection-start-line="42" selection-start-column="74" selection-end-line="42" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-690">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="17" column="80" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,32 +779,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/client/ClientData.java">
+    <entry file="file://$PROJECT_DIR$/src/game/client/person/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="82" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="572">
+          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/setting/animation/player.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/client/AnimationScript.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="396">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1855#1856#0" expanded="true" />
-            <element signature="e#1884#1885#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/client/ClientData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/client/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="792">
+          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/client/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
