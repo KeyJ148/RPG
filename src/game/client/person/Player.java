@@ -42,7 +42,7 @@ public class Player extends Person {
         }
 
         sendDataLastTicks++;
-        if (ClientData.serverStarted && sendDataLastTicks == sendDataEveryTicks){
+        if (ClientData.serverStarted && sendDataLastTicks >= sendDataEveryTicks){
             sendDataLastTicks = 0;
             Global.tcpControl.send(2, getData());
         }

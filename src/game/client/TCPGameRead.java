@@ -45,7 +45,7 @@ public class TCPGameRead{
 		ClientData.associates = new Associate[ClientData.peopleMax];//ќдин будет пустой, соответствующий id этого клиента
 	}
 
-	public static void take5(String str){
+	public static void take5(String str) {
 		ClientData.serverStarted = true;
 	}
 

@@ -13,7 +13,7 @@ public class Ping {
 	private int pingMid;
 	private int pingMax;
 	
-	private boolean returnData = true;
+	private boolean work = false;
 	
 	public Ping(){
 		clear();
@@ -35,12 +35,12 @@ public class Ping {
 		pingNumber++;
 		pingMid = pingSum/pingNumber;
 		
-		returnData = true;
+		work = true;
 	}
 	
 	public void send(){
-		if (returnData){
-			returnData = false;
+		if (work){
+			work = false;
 			pingTime = System.currentTimeMillis();
 			Global.tcpControl.send(1, "");
 		}
@@ -54,6 +54,10 @@ public class Ping {
 		pingMin = 999;
 		pingMid = 0;
 		pingMax = 0;
+	}
+
+	public void start(){
+		work = true;
 	}
 	
 	public int pingMax(){
