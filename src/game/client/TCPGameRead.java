@@ -11,6 +11,7 @@ public class TCPGameRead{
 			case 2: take2(str); break;
 			case 3: take3(str); break;
 			case 4: take4(str); break;
+			case 5: take5(str); break;
 			//Engine: –азличные действи€ с уникальными индексами
 		}
 	}
@@ -42,6 +43,10 @@ public class TCPGameRead{
 	public static void take4(String str){
 		ClientData.peopleMax = Integer.parseInt(str);
 		ClientData.associates = new Associate[ClientData.peopleMax];//ќдин будет пустой, соответствующий id этого клиента
+	}
+
+	public static void take5(String str){
+		ClientData.serverStarted = true;
 	}
 
 }

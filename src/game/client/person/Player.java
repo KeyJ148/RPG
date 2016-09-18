@@ -3,6 +3,7 @@ package game.client.person;
 import engine.Global;
 import engine.io.KeyboardHandler;
 import engine.io.MouseHandler;
+import game.client.ClientData;
 import game.client.TextureManager;
 import org.lwjgl.input.Keyboard;
 
@@ -41,7 +42,7 @@ public class Player extends Person {
         }
 
         sendDataLastTicks++;
-        if (sendDataLastTicks == sendDataEveryTicks){
+        if (ClientData.serverStarted && sendDataLastTicks == sendDataEveryTicks){
             sendDataLastTicks = 0;
             Global.tcpControl.send(2, getData());
         }

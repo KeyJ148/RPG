@@ -10,6 +10,7 @@ public class Server {
     2: координаты игрока - int x, int y, int direction (int x, int y, int direction, int id)
     3: фон карты - (String background)
     4: количество игроков - (int peopleMax)
+    5: сервер запущен
      */
 
     public Server(){
@@ -32,6 +33,19 @@ public class Server {
 
     public void take1(int id, String str){
         GameServer.send(id, 1, "");
+        if (ServerData.playerData != null && (!ServerData.playerData[id].connect)) {
+            ServerData.playerData[id].connect = true;
+
+            boolean allConnected = true;
+            for (PlayerData player : ServerData.playerData){
+                if (player.connect == false){
+                    allConnected = false;
+                    break;
+                }
+            }
+
+            if (allConnected) GameServer.sendAll(5, "");
+        }
     }
 
     public void take2(int id, String str) {

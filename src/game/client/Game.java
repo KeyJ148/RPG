@@ -38,9 +38,9 @@ public class Game {
 
 	//Методы не относящиеся к движку
 	public void initAfterConnect(){
-		ObjLight obj = new ObjLight(Integer.MAX_VALUE/2,Integer.MAX_VALUE/2,90,0,TextureManager.cursor);
-		ObjLight obj1 = new ObjLight(Integer.MAX_VALUE/2-100,Integer.MAX_VALUE/2-100,90,0,TextureManager.cursor);
-		Obj obj2 = new Obj(Integer.MAX_VALUE/2+200,Integer.MAX_VALUE/2+200,0,90,0,false,TextureManager.enemy);
+		ObjLight obj = new ObjLight(Integer.MAX_VALUE/2,Integer.MAX_VALUE/2,90,1,TextureManager.cursor);
+		ObjLight obj1 = new ObjLight(Integer.MAX_VALUE/2-100,Integer.MAX_VALUE/2-100,90,1,TextureManager.cursor);
+		Obj obj2 = new Obj(Integer.MAX_VALUE/2+200,Integer.MAX_VALUE/2+200,0,90,1,false,TextureManager.enemy);
 		Global.room.objAdd(obj);
 		Global.room.objAdd(obj1);
 		Global.room.objAdd(obj2);
