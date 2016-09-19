@@ -11,6 +11,7 @@ public class Server {
     3: фон карты - (String background)
     4: количество игроков - (int peopleMax)
     5: сервер запущен
+    6: игрок подключен
      */
 
     public Server(){
@@ -27,12 +28,28 @@ public class Server {
         switch (type){
             case 1: take1(id, str); break;//Engine:  лиент пингует сервер
             case 2: take2(id, str); break;//ѕередача позиции игрока
+            case 6: take6(id, str); break;
             //Engine: –азличные действи€ с уникальными индексами
         }
     }
 
     public void take1(int id, String str){
         GameServer.send(id, 1, "");
+    }
+
+    public void take2(int id, String str) {
+        GameServer.sendAllExceptId(id, 2, str + " " + id);
+        String[] data = str.split(" ");
+        int x = Integer.parseInt(data[0]);
+        int y = Integer.parseInt(data[1]);
+        if (ServerData.playerData != null) {
+            ServerData.playerData[id].x = x;
+            ServerData.playerData[id].y = y;
+        }
+        ServerData.mapGenerator.update(x, y);
+    }
+
+    public void take6(int id, String str){
         if (ServerData.playerData != null && (!ServerData.playerData[id].connect)) {
             ServerData.playerData[id].connect = true;
 
@@ -46,17 +63,5 @@ public class Server {
 
             if (allConnected) GameServer.sendAll(5, "");
         }
-    }
-
-    public void take2(int id, String str) {
-        GameServer.sendAllExceptId(id, 2, str + " " + id);
-        String[] data = str.split(" ");
-        int x = Integer.parseInt(data[0]);
-        int y = Integer.parseInt(data[1]);
-        if (ServerData.playerData != null) {
-            ServerData.playerData[id].x = x;
-            ServerData.playerData[id].y = y;
-        }
-        ServerData.mapGenerator.update(x, y);
     }
 }

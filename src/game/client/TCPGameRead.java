@@ -47,6 +47,7 @@ public class TCPGameRead{
 
 	public static void take5(String str) {
 		ClientData.serverStarted = true;
+		Global.pingCheck.start();
 	}
 
 }

@@ -17,7 +17,7 @@ public class Game {
 		new Menu(this);
 	}
 	
-	public void update(long delta){
+	public void update(long delta) {
 		//Engine: Выполняется каждый степ перед обновлением всех игровых объектов
 		if (KeyboardHandler.isKeyDown(Keyboard.KEY_ESCAPE)) System.exit(0);
 
@@ -38,7 +38,7 @@ public class Game {
 
 	//Методы не относящиеся к движку
 	public void initAfterConnect(){
-		Global.pingCheck.start();
+		Global.tcpControl.send(6, "");
 
 		ObjLight obj = new ObjLight(Integer.MAX_VALUE/2,Integer.MAX_VALUE/2,90,1,TextureManager.cursor);
 		ObjLight obj1 = new ObjLight(Integer.MAX_VALUE/2-100,Integer.MAX_VALUE/2-100,90,1,TextureManager.cursor);
