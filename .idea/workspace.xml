@@ -2,19 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ef32d60-0a86-4b44-a938-a23e09dcf4ee" name="Default" comment="v3.1.0&#10;Движок обновлен до v4.0.1&#10;Изменено поле воода IP">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/inf/TableAccordKey.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Engine/engine/inf/TableAccordKey.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/Global.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/Global.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/Loader.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/Loader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Analyzer.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Analyzer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Render.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Render.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/inf/Inf.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/Inf.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/inf/examples/TextBox.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/examples/TextBox.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/FontManager.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/FontManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/Title.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/Title.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/io/KeyboardHandler.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/io/KeyboardHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/io/Logger.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/io/Logger.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/map/Border.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/map/Border.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/client/TCPControl.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/client/TCPControl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/server/GameServer.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/server/GameServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/Menu$ButtonLogin.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/Menu$ButtonLogin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/Menu.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/Menu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/Global.java" afterPath="$PROJECT_DIR$/src/engine/Global.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/Loader.java" afterPath="$PROJECT_DIR$/src/engine/Loader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/inf/Inf.java" afterPath="$PROJECT_DIR$/src/engine/inf/Inf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/inf/examples/TextBox.java" afterPath="$PROJECT_DIR$/src/engine/inf/examples/TextBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/inf/title/FontManager.java" afterPath="$PROJECT_DIR$/src/engine/inf/title/FontManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/inf/title/Title.java" afterPath="$PROJECT_DIR$/src/engine/inf/title/Title.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/io/KeyboardHandler.java" afterPath="$PROJECT_DIR$/src/engine/io/KeyboardHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/io/Logger.java" afterPath="$PROJECT_DIR$/src/engine/io/Logger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/net/client/Ping.java" afterPath="$PROJECT_DIR$/src/engine/net/client/Ping.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/net/client/TCPControl.java" afterPath="$PROJECT_DIR$/src/engine/net/client/TCPControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/Menu.java" afterPath="$PROJECT_DIR$/src/game/client/Menu.java" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/game/client/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="98">
-              <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -692,7 +696,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.0.0&#10;Первая версия игрового движка." />
     <MESSAGE value="v1.0.1&#10;Комната отрисовывается по середине экрана.&#10;Комната отрисовывается белым цветом." />
     <MESSAGE value="v2.0.1&#10;Добавлены классы для работы с интерфейсом.&#10;Обработчики клавиатуры и мыши переведены в static." />
     <MESSAGE value="v2.0.0&#10;Добавлены классы для работы с интерфейсом.&#10;Обработчики клавиатуры и мыши переведены в static." />
@@ -717,7 +720,8 @@
     <MESSAGE value="v3.0.0&#10;Движок обновлён до v3.7.0&#10;Улучшено поле ввода данных для сетевой игры&#10;Исправлен вылет при подключение к серверу&#10;Добавлен класс AnimationScript&#10;Добавлен пример скрипта" />
     <MESSAGE value="v3.0.3&#10;Движок обновлён до v3.7.1&#10;Исправлен подсчёт пинга&#10;Исправлено зависание при подключение" />
     <MESSAGE value="v3.0.4&#10;Проверка подключения осуществляется отдельной командой&#10;Клиент начинает пинговать только после подключения всех игроков" />
-    <option name="LAST_COMMIT_MESSAGE" value="v3.0.4&#10;Проверка подключения осуществляется отдельной командой&#10;Клиент начинает пинговать только после подключения всех игроков" />
+    <MESSAGE value="v3.1.0&#10;Движок обновлен до v4.0.1&#10;Изменено поле воода IP" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3.1.0&#10;Движок обновлен до v4.0.1&#10;Изменено поле воода IP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -726,7 +730,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/lang/Character.java" />
     <entry file="file://$PROJECT_DIR$/src/game/client/person/Effect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -1061,10 +1064,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="869" column="53" selection-start-line="869" selection-start-column="53" selection-end-line="869" selection-end-column="53" />
+          <folding>
+            <element signature="e#29963#29964#0" expanded="true" />
+            <element signature="e#30006#30007#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/client/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
           <folding />
         </state>
       </provider>
