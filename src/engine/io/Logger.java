@@ -12,13 +12,13 @@ public class Logger {
     //Вывод сообщения о ошибке
     public static void error(String s){
         System.out.println("[ERROR] " + s);
-        if (Logger.enable) out.println("[ERROR]" + s);
+        if (Logger.enable) out.println("[ERROR] " + s);
     }
 
     //Вывод информационного сообщения
     public static void p(String s){
         System.out.println("[INFO] " + s);
-        if (Logger.enable) out.println("[INFO]" + s);
+        if (Logger.enable) out.println("[INFO] " + s);
     }
 
     public static void enable(){

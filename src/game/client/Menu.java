@@ -15,45 +15,31 @@ public class Menu {
     public Menu(Game game){
         this.game = game;
 
-        int d = 5;//Расстояние между полями
-        int hf = 50;//Высота поля
-        int wf = 100;//Длина поля для 3 символов
-        int w = wf*6+d*7, h = hf*2+d*3;
-        int x = Global.engine.render.getWidth()/2;
-        int y = Global.engine.render.getHeight()/2;
-        int lx = x-w/2;//Левый верхний угол
-        int ly = y-h/2;
+        int interval = 5;//Расстояние между полями
+        int hField = 50;//Высота поля
+        int w = 470;//Ширина окна
+        int h = hField*2+interval*3;//Высота окна
+        int x = Global.engine.render.getWidth()/2-w/2;//Левый верхний угол
+        int y = Global.engine.render.getHeight()/2-h/2;//У окна
 
-        Inf window = new Inf(x, y, w, h, TextureManager.sys_null);
-        TextBox tb1 = new TextBox(lx+d+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
-        TextBox tb2 = new TextBox(lx+wf+d*2+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
-        TextBox tb3 = new TextBox(lx+wf*2+d*3+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
-        TextBox tb4 = new TextBox(lx+wf*3+d*4+wf/2, ly+d+hf/2, wf, hf, TextureManager.sys_null);
-        TextBox tb5 = new TextBox(lx+wf*4+d*5+wf*2/2, ly+d+hf/2, wf*2, hf, TextureManager.sys_null);
-        ButtonLogin bl = new ButtonLogin(lx+d+(w-2*d)/2, ly+hf+d*2+hf/2, w-2*d, hf, TextureManager.sys_null);
+        Inf window = new Inf(x+w/2, y+h/2, w, h, TextureManager.sys_null);
+        TextBox tb = new TextBox(x+w/2, y+interval+hField/2, w-interval*2, hField, TextureManager.sys_null);
+        ButtonLogin bl = new ButtonLogin(x+w/2, y+interval*2+hField+ hField/2, w-interval*2, hField, TextureManager.sys_null);
 
         window.setFrame(new Color(0.0f, 0.0f, 1.0f));
-        tb1.setFrame(new Color(0.0f, 0.0f, 1.0f));
-        tb2.setFrame(new Color(0.0f, 0.0f, 1.0f));
-        tb3.setFrame(new Color(0.0f, 0.0f, 1.0f));
-        tb4.setFrame(new Color(0.0f, 0.0f, 1.0f));
-        tb5.setFrame(new Color(0.0f, 0.0f, 1.0f));
+        tb.setFrame(new Color(0.0f, 0.0f, 1.0f));
         bl.setFrame(new Color(0.0f, 0.0f, 1.0f));
 
         Global.infMain.infs.add(window);
-        Global.infMain.infs.add(tb1);
-        Global.infMain.infs.add(tb2);
-        Global.infMain.infs.add(tb3);
-        Global.infMain.infs.add(tb4);
-        Global.infMain.infs.add(tb5);
+        Global.infMain.infs.add(tb);
         Global.infMain.infs.add(bl);
 
-        bl.setListener(tb1, tb2, tb3, tb4, tb5, window);
+        bl.setListener(tb, window);
     }
 
     public class ButtonLogin extends Button {
 
-        TextBox tb1, tb2, tb3, tb4, tb5;
+        TextBox tb;
         Inf window;
 
         public ButtonLogin(int x, int y, int width, int height, TextureHandler texture){
@@ -61,26 +47,28 @@ public class Menu {
             this.label = "START!";
         }
 
-        public void setListener(TextBox tb1, TextBox tb2, TextBox tb3, TextBox tb4, TextBox tb5, Inf window){
-            this.tb1 = tb1;
-            this.tb2 = tb2;
-            this.tb3 = tb3;
-            this.tb4 = tb4;
-            this.tb5 = tb5;
+        public void setListener(TextBox tb, Inf window){
+            this.tb = tb;
             this.window = window;
         }
 
         @Override
         public void action(){
-            int port = Integer.parseInt(tb5.label);
+            String[] data = tb.label.split(":");
 
-            if (tb2.label.length() == 0) {
-                new ServerLoader(port, Integer.parseInt(tb1.label), false);
-                Global.tcpControl.connect("127.0.0.1", port);
+            String ip = "127.0.0.1";
+            if (tb.label.length() > 0) ip = data[0];
+
+            int port = 25566;
+            if (data.length > 1) port = Integer.parseInt(data[1]);
+
+            //Вместо ip может быть записано число игроков для создания сервера
+            if (ip.contains(".")) {
+                Global.tcpControl.connect(ip, port);
                 Global.tcpRead.start();
             } else {
-                String ip = tb1.label + "." + tb2.label + "." + tb3.label + "." + tb4.label;
-                Global.tcpControl.connect(ip, port);
+                new ServerLoader(port, Integer.parseInt(ip), false);
+                Global.tcpControl.connect("127.0.0.1", port);
                 Global.tcpRead.start();
             }
 
@@ -89,11 +77,7 @@ public class Menu {
         }
 
         public void allDelete(){
-            tb1.delete();
-            tb2.delete();
-            tb3.delete();
-            tb4.delete();
-            tb5.delete();
+            tb.delete();
             window.delete();
             delete();
         }

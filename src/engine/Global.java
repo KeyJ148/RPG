@@ -17,14 +17,13 @@ public class Global {
 	public static Room room; //Текущая комната
 
 	public static InfMain infMain; //Главный класс интерфейса
-	public static ObjLight camera;//Объект, за которым следует камера
+	public static SettingStorage setting;//Объект хранящий основный настройки
 
 	public static TCPRead tcpRead; //Цикл считывания данных с сервера
-	public static TCPControl tcpControl; //Хранит настройки и создаёт соединения
+	public static TCPControl tcpControl; //Хранит настройки и работает с сетью
 	public static Ping pingCheck;//Объект для проверки пинга
-	
-	public static SettingStorage setting;//Объект хранящий основный настройки
-	
+
+	public static ObjLight camera;//Объект, за которым следует камера
 	public static double cameraX;
 	public static double cameraY;
 	public static double cameraXView;

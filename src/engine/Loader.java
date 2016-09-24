@@ -10,6 +10,7 @@ import engine.net.client.TCPRead;
 import engine.setting.SettingStorage;
 import game.client.Game;
 import game.client.TextureManager;
+import org.newdawn.slick.util.Log;
 
 public class Loader {
 	
@@ -41,6 +42,8 @@ public class Loader {
 	
 	//Инициализация движка перед запуском
 	public static void init() {
+		Log.setVerbose(false); //Отключения логов в Slick-util
+
 		Global.setting = new SettingStorage();//Создание хранилища настроек
 		Global.setting.init();//Загрузка настроек
 		Global.engine = new Engine();//Создание класса для главного цикла

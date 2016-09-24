@@ -30,7 +30,7 @@ public class Inf {
 
     public void draw(){
         sprite.draw(x,y,direction);
-        if (frame) drawFrame();
+        if (frameColor != null) drawFrame();
     }
 
     private void drawFrame(){

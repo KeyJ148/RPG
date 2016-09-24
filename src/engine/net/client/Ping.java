@@ -55,7 +55,7 @@ public class Ping {
 		pingMid = 0;
 		pingMax = 0;
 	}
-
+	
 	public void start(){
 		work = true;
 	}

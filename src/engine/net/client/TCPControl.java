@@ -12,8 +12,6 @@ public class TCPControl {
 	private DataInputStream in;
 	private DataOutputStream out;
 
-	public static long idNet = 1; //id объекта создаваемого у противника из-за действий игрока
-
 	public int sizeDataSend = 0;//bytes 
 	public int sizeDataRead = 0;
 	public Object sizeDataReadMonitor = new Object();//Ќужен, чтобы не запрашивать sizeDataRead из потока считывани€ и анализатора

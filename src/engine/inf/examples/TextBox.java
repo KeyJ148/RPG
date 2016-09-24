@@ -3,7 +3,6 @@ package engine.inf.examples;
 import engine.Global;
 import engine.image.TextureHandler;
 import engine.inf.Inf;
-import engine.inf.TableAccordKey;
 import engine.io.KeyboardHandler;
 import engine.io.MouseHandler;
 import org.lwjgl.input.Keyboard;
@@ -21,18 +20,12 @@ public class TextBox extends Label{
     public void update(){
         if (active){//Если поле ввода активно
             for (int i= 0; i < KeyboardHandler.bufferKey.size(); i++){//Перебираем все действия клавиш
-                if (!KeyboardHandler.bufferState.get(i)) {//Если клавиша была отпущена
+                if (KeyboardHandler.bufferState.get(i)) {//Если клавиша была нажата
                     int key = KeyboardHandler.bufferKey.get(i);//Получаем код отпущенной клавиши
-                    if (TableAccordKey.get(key) != null){//Если он не равен null
-                        char ch = TableAccordKey.get(key);
-                        //Если зажат шифт
-                        if (KeyboardHandler.isKeyDown(Keyboard.KEY_LSHIFT) || KeyboardHandler.isKeyDown(Keyboard.KEY_RSHIFT)){
-                            ch = Character.toUpperCase(ch) ;//То ставим большой регистр
-                        }
-                        label += ch;//Добавляем этот символ в набранный текст
-                    } else {//Если символа нет в нашей таблицы
-                        //Если это backspace, то убираем последнйи символ
-                        if (key == Keyboard.KEY_BACK && label.length() > 0) label = label.substring(0,label.length()-1);
+                    if (key == Keyboard.KEY_BACK && label.length() > 0){ //Если это backspace, то убираем последнйи символ
+                        label = label.substring(0,label.length()-1);
+                    } else {
+                        if (KeyboardHandler.bufferChar.get(i) != null) label += KeyboardHandler.bufferChar.get(i);
                     }
                 }
             }
