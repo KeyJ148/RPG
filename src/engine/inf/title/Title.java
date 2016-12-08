@@ -52,7 +52,6 @@ public class Title {
 		TrueTypeFont ttFont = FontManager.getFont(size, font);
 		GL11.glLoadIdentity();
 		ttFont.drawString((float) x, (float) y, str, c);
-		
 	}
 
 	public int getX(){

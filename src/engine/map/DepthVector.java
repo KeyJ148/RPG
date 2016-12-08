@@ -3,14 +3,16 @@ package engine.map;
 import engine.obj.Obj;
 import engine.obj.ObjLight;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class DepthVector {
 	
 	private int depth;
 	private MapControl mc;
-    private ArrayList<Chunk> chunks = new ArrayList<>();
+    private ArrayList<ArrayList<Chunk>> chunks = new ArrayList<>();
+	//Двумерный динамический массив хранит все Чанки
+	//Внешний массив хранит сортировку массивов по координате y
+	//Внутренний массив имеет чанки с одинаковой y, но разными x
 	
 	public DepthVector(MapControl mc, int depth, ObjLight obj){
 		this.mc = mc;
@@ -18,63 +20,136 @@ public class DepthVector {
 		
 		add(obj);
 	}
-	
+
 	public void add(ObjLight obj){
-		getChunk((int) obj.x, (int) obj.y).add((int) obj.id);
+		getChunk((int) obj.x, (int) obj.y).add(obj.id);
 	}
 	
 	public void del(ObjLight obj){
-		getChunk((int) obj.x, (int) obj.y).del((int) obj.id);
+		getChunk((int) obj.x, (int) obj.y).del(obj.id);
 	}
 	
 	public int getDepth(){
 		return depth;
 	}
-	
+
+	//Обновление объекта при перемещение из чанка в чанк
 	public void update(Obj obj){
 		Chunk chunkNow = getChunk((int) obj.x,(int) obj.y);
 		Chunk chunkLast = getChunk((int) obj.xPrevious,(int) obj.yPrevious);
 				
 		if (!chunkLast.equals(chunkNow)){
-			chunkLast.del((int) obj.id);
-			chunkNow.add((int) obj.id);
+			chunkLast.del(obj.id);
+			chunkNow.add(obj.id);
 		}
 	}
-	
-	public void render(int x, int y, int width, int height){
+
+	//Отрисовка чанков вокруг позиции x, y
+	public void render(int x, int y, int width, int height) {
 		Chunk chunk = getChunk(x, y);
 		int chunkPosX = chunk.getPosWidth();
 		int chunkPosY = chunk.getPosHeight();
-		int rangeX = (int) Math.ceil((double) width/2/mc.chunkSize);//В чанках
-		int rangeY = (int) Math.ceil((double) height/2/mc.chunkSize);//В чанках
+		int rangeX = (int) Math.ceil((double) width / 2 / mc.chunkSize);//В чанках
+		int rangeY = (int) Math.ceil((double) height / 2 / mc.chunkSize);//В чанках
 
-		for (int i=chunkPosX-rangeX; i<=chunkPosX+rangeX; i++)
-			for (int j=chunkPosY-rangeY; j<=chunkPosY+rangeY; j++)
+		for (int i = chunkPosX - rangeX; i <= chunkPosX + rangeX; i++){
+			for (int j = chunkPosY - rangeY; j <= chunkPosY + rangeY; j++) {
 				if ((i >= 0) && (i < mc.numberWidth) && (j >= 0) && (j < mc.numberHeight)) {
 					mc.chunkRender++;
-					pointToChunk(new Point(i, j)).render();
+					pointToChunk(new Vector2(i, j)).render();
 				}
+			}
+		}
 	}
-	
+
 	private Chunk getChunk(int x, int y){
 		return pointToChunk(getPoint(x, y));
 	}
-	
-	private Chunk pointToChunk(Point p){
-	    for (Chunk chunk : chunks)
-	        if (chunk.getPosWidth() == p.getX() && chunk.getPosHeight() == p.getY())
-                return chunk;
 
-        Chunk newChunk = new Chunk((int) p.getX(), (int) p.getY());
-        chunks.add(newChunk);
-		return newChunk;
+	//Возвращает чанк из позиции чанка по x,y (Не координаты, а позиции чанка)
+	private Chunk pointToChunk(Vector2 p){
+		//Оптимальный бинарный поиск массива (внешнего), где Y равен входному Y
+		int key = p.y;
+		int left = 0;
+		int right = chunks.size()-1;//После поиска здесь будет позиция найденного элемента
+
+		while (left < right){
+			int mid = (left+right)/2;
+			if (key > chunks.get(mid).get(0).getPosHeight()){
+				left = mid+1;
+			} else {
+				right = mid;
+			}
+		}
+		int indexOnY = right;//Индекс нужного нам внутреннего массива во внешнем массиве
+
+		//Если нужный массив не был найден, то создаем его
+		//y = indexOnY, x = 0, Получить позицию по y
+		if (chunks.size() == 0 || key != chunks.get(indexOnY).get(0).getPosHeight()){
+			Chunk newChunk = new Chunk(p.x, p.y);
+			ArrayList<Chunk> chunksOnX = new ArrayList<>();
+			chunksOnX.add(newChunk);
+
+			//Вставляем во внешнией массив внутренний массив в соответствие с сортировкой
+			if (chunks.size() == 0){
+				chunks.add(chunksOnX);
+			} else {
+				if (chunks.get(indexOnY).get(0).getPosHeight() < key) chunks.add(indexOnY+1, chunksOnX);
+				else chunks.add(indexOnY, chunksOnX);
+			}
+
+			return newChunk;
+		}
+
+		//Оптимальный бинарный поиск массива (внутреннего) по внешнему массиву с индексом Mid, где X равен входному X
+		key = p.x;
+		left = 0;
+		right = chunks.get(indexOnY).size()-1;//После поиска здесь будет позиция найденного элемента
+
+		while (left < right){
+			int mid = (left+right)/2;
+			if (key > chunks.get(indexOnY).get(mid).getPosWidth()){
+				left = mid+1;
+			} else {
+				right = mid;
+			}
+		}
+		int indexOnX = right;//Индекс нужного нам чанка во внутреннем массиве
+
+		//Если нужный внутренний массив не был найден, то создаем его
+		//y = indexOnY, x = indexOnX, Получить позицию по x
+		if (chunks.get(indexOnY).size() == 0 || key != chunks.get(indexOnY).get(indexOnX).getPosWidth()){
+			Chunk newChunk = new Chunk(p.x, p.y);
+
+			//Вставляем во внешнией массив внутренний массив в соответствие с сортировкой
+			if (chunks.get(indexOnY).size() == 0){
+				chunks.get(indexOnY).add(newChunk);
+			} else{
+				if (chunks.get(indexOnY).get(indexOnX).getPosWidth() < key) chunks.get(indexOnY).add(indexOnX+1, newChunk);
+				else chunks.get(indexOnY).add(indexOnX, newChunk);
+			}
+
+			return newChunk;
+		}
+
+		return chunks.get(indexOnY).get(indexOnX);
 	}
 	
-	private Point getPoint(int x, int y){
+	private Vector2 getPoint(int x, int y){
 		int delta = mc.borderSize/mc.chunkSize-1;//delta=0 (1-1)
 		int posWidth = (int) Math.ceil((double) x/mc.chunkSize+delta);//-1 т.к. нумерация в массиве с 0
 		int posHeight = (int) Math.ceil((double) y/mc.chunkSize+delta);//+1 т.к. добавлена обводка карты толщиной в 1 чанк для обработки выхода за карту
-		return new Point(posWidth, posHeight);
+		return new Vector2(posWidth, posHeight);
+	}
+
+	//Векторная переменная хранящая 2 параметра (Аналог Point для int)
+	public static class Vector2{
+		int x, y;
+
+		public Vector2(int x, int y){
+			this.x = x;
+			this.y = y;
+		}
 	}
 }
 

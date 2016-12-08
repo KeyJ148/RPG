@@ -76,11 +76,11 @@ public class MapControl {
 			}
 		}
 	}
-	
+
 	public void render(int x, int y, int width, int height){
 		chunkRender = 0;
-		for (int i=0; i<depthVectors.size(); i++)
+		for (int i=0; i<depthVectors.size(); i++) {
 			depthVectors.get(i).render(x, y, width, height);
-			
+		}
 	}
 }

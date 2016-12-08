@@ -44,7 +44,7 @@ public class Menu {
 
         public ButtonLogin(int x, int y, int width, int height, TextureHandler texture){
             super(x, y, width, height, texture);
-            this.label = "START!";
+            this.label = "Начать игру!";
         }
 
         public void setListener(TextBox tb, Inf window){

@@ -40,7 +40,7 @@ public class Chunk {
 	public void render(){
 		for (int id : number){
 			if (Global.room.objects.get(id) != null){
-				ObjLight obj = (ObjLight) Global.room.objects.get(id);
+				ObjLight obj = Global.room.objects.get(id);
 				obj.draw();
 			}
 		}

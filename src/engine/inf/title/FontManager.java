@@ -17,6 +17,7 @@ public class FontManager {
 
 	private static String path = "res/font/";
 	private static String name = "arial";
+	private static char[] alphabet = "àáâãäå¸æçèéêëìíîïğñòóôõö÷øùüûúışÿÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÜÛÚİŞß".toCharArray();
 
 	private static int addFont(int size, int font) {
 		try {
@@ -31,7 +32,7 @@ public class FontManager {
 			Font awtFont = Font.createFont(Font.TRUETYPE_FONT, inputStream);
 			awtFont = awtFont.deriveFont((float) size);
 
-			ttFontArray.add(new TrueTypeFont(awtFont, false));
+			ttFontArray.add(new TrueTypeFont(awtFont, true, alphabet));
 			sizeArray.add(size);
 			fontArray.add(font);
 			return ttFontArray.size() - 1;
