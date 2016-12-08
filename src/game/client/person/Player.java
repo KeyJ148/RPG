@@ -49,6 +49,6 @@ public class Player extends Person {
     }
 
     public String getData(){
-        return Integer.toString((int) x) + " " + Integer.toString((int) y) + " " + (int) getDirectionDraw();
+        return (int) x + " " + (int) y + " " + (int) getDirection() + " " + (int) speed + " " + (int) getDirectionDraw();
     }
 }

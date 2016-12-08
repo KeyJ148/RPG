@@ -53,10 +53,8 @@ public class Game {
 		p.addItem(new Item(Item.Grade.GRAY, Item.Type.HELMET));
 		Item item = new Item(Item.Grade.GREEN, Item.Type.HELMET);
 		item.effect.addition.maxHp = 100;
-		System.out.println(p.stats.maxHp);
-		System.out.println(p.addItem(item));
+		p.addItem(item);
 		p.calcStats();
-		System.out.println(p.stats.maxHp);
 
 		AnimationScript as = new AnimationScript(obj2);
 		as.loadFromFile("animation/player.properties");

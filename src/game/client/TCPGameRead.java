@@ -21,17 +21,17 @@ public class TCPGameRead{
 		int x = Integer.parseInt(data[0]);
 		int y = Integer.parseInt(data[1]);
 		int direction = Integer.parseInt(data[2]);
-		int id = Integer.parseInt(data[3]);
+		int speed = Integer.parseInt(data[3]);
+		int directionDraw = Integer.parseInt(data[4]);
+		int id = Integer.parseInt(data[5]);
 
 		if (ClientData.associates != null){
 			if (ClientData.associates[id] == null){
-				ClientData.associates[id] = new Associate(x, y, direction);
+				ClientData.associates[id] = new Associate(x, y, direction, speed, directionDraw);
 				Global.room.objAdd(ClientData.associates[id]);
 			}
 
-			ClientData.associates[id].x = x;
-			ClientData.associates[id].y = y;
-			ClientData.associates[id].direction = direction;
+			ClientData.associates[id].setData(x, y, direction, speed, directionDraw);
 		}
 	}
 

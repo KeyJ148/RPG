@@ -7,7 +7,8 @@ public class Server {
     /*
     Тип сообщения: назначение - расшифровка при получение сервом (при получение клиентом)
     1: Клиент пингует сервер
-    2: координаты игрока - int x, int y, int direction (int x, int y, int direction, int id)
+    2: координаты игрока - int x, int y, int direction, int speed, int directionDraw
+                          (int x, int y, int direction, int speed, int directionDraw, int id)
     3: фон карты - (String background)
     4: количество игроков - (int peopleMax)
     5: сервер запущен
