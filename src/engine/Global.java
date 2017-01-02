@@ -6,7 +6,6 @@ import engine.map.Room;
 import engine.net.client.Ping;
 import engine.net.client.TCPControl;
 import engine.net.client.TCPRead;
-import engine.obj.ObjLight;
 import engine.setting.SettingStorage;
 import game.client.Game;
 
@@ -23,10 +22,6 @@ public class Global {
 	public static TCPControl tcpControl; //Хранит настройки и работает с сетью
 	public static Ping pingCheck;//Объект для проверки пинга
 
-	public static ObjLight camera;//Объект, за которым следует камера
-	public static double cameraX;
-	public static double cameraY;
-	public static double cameraXView;
-	public static double cameraYView;
+	public static int cameraYView;
 }
 

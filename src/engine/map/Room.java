@@ -1,35 +1,35 @@
 package engine.map;
 
-import engine.image.Sprite;
-import engine.obj.ObjLight;
+import engine.image.TextureHandler;
+import engine.obj.Obj;
 
 import java.util.Vector;
 
 public class Room {
 	
-	public Sprite background;
+	public TextureHandler background;
 	public int width, height;
 
-	public Vector<ObjLight> objects; //Массив со всеми объектами
+	public Vector<Obj> objects; //Массив со всеми объектами
 	public MapControl mapControl; //Массив со всеми чанками и объектами
 
 	public Room(int width, int height) {
 		this.width = width;
 		this.height = height;
 		
-		objects = new Vector<ObjLight>();
+		objects = new Vector<>();
 		mapControl = new MapControl(width, height);
 	}
 
 	public void update(long delta){
-		for (ObjLight obj : objects)
+		for (Obj obj : objects)
 			if (obj != null)
 				obj.update(delta);
 	}
 
 	public int objCount(){
 		int count = 0;
-		for (ObjLight obj : objects)
+		for (Obj obj : objects)
 			if (obj != null)
 				count++;
 
@@ -37,12 +37,12 @@ public class Room {
 	}
 
 	//Добавление объекта в комнату
-	public void objAdd(ObjLight objLight){
-		objLight.id = objects.size();
-		objLight.setRoom(this);
+	public void objAdd(Obj obj){
+		obj.position.id = objects.size();
+		obj.position.room = this;
 
-		objects.add(objLight);
-		mapControl.add(objLight);
+		objects.add(obj);
+		mapControl.add(obj);
 	}
 
 	//Удаление объекта из комнаты по id

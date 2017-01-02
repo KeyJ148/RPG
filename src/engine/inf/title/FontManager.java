@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 public class FontManager {
-	
+
 	private static ArrayList<TrueTypeFont> ttFontArray = new ArrayList<TrueTypeFont>();
 	private static ArrayList<Integer> sizeArray = new ArrayList<Integer>();
 	private static ArrayList<Integer> fontArray = new ArrayList<Integer>();//Тип, например awt.Font.BOLD
@@ -49,10 +49,10 @@ public class FontManager {
 				return i;
 			}
 		}
-		
+
 		return -1;
 	}
-	
+
 	public static TrueTypeFont getFont(int size, int font){
 		int i = existFont(size, font);
 		if (i == -1) i = addFont(size, font);

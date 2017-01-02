@@ -1,46 +1,48 @@
 package engine.map;
 
+import engine.Vector2;
 import engine.obj.Obj;
-import engine.obj.ObjLight;
 
 import java.util.ArrayList;
 
 public class DepthVector {
-	
+
 	private int depth;
 	private MapControl mc;
-    private ArrayList<ArrayList<Chunk>> chunks = new ArrayList<>();
+	private ArrayList<ArrayList<Chunk>> chunks = new ArrayList<>();
 	//Двумерный динамический массив хранит все Чанки
 	//Внешний массив хранит сортировку массивов по координате y
 	//Внутренний массив имеет чанки с одинаковой y, но разными x
-	
-	public DepthVector(MapControl mc, int depth, ObjLight obj){
+
+	public DepthVector(MapControl mc, int depth, Obj obj){
 		this.mc = mc;
 		this.depth = depth;
-		
+
 		add(obj);
 	}
 
-	public void add(ObjLight obj){
-		getChunk((int) obj.x, (int) obj.y).add(obj.id);
+	public void add(Obj obj){
+		getChunk((int) obj.position.x, (int) obj.position.y).add(obj.position.id);
 	}
-	
-	public void del(ObjLight obj){
-		getChunk((int) obj.x, (int) obj.y).del(obj.id);
+
+	public void del(Obj obj){
+		getChunk((int) obj.position.x, (int) obj.position.y).del(obj.position.id);
 	}
-	
+
 	public int getDepth(){
 		return depth;
 	}
 
 	//Обновление объекта при перемещение из чанка в чанк
 	public void update(Obj obj){
-		Chunk chunkNow = getChunk((int) obj.x,(int) obj.y);
-		Chunk chunkLast = getChunk((int) obj.xPrevious,(int) obj.yPrevious);
-				
+		if (obj.movement == null) return;
+
+		Chunk chunkNow = getChunk((int) obj.position.x,(int) obj.position.y);
+		Chunk chunkLast = getChunk((int) obj.movement.getXPrevious(),(int) obj.movement.getYPrevious());
+
 		if (!chunkLast.equals(chunkNow)){
-			chunkLast.del(obj.id);
-			chunkNow.add(obj.id);
+			chunkLast.del(obj.position.id);
+			chunkNow.add(obj.position.id);
 		}
 	}
 
@@ -56,7 +58,7 @@ public class DepthVector {
 			for (int j = chunkPosY - rangeY; j <= chunkPosY + rangeY; j++) {
 				if ((i >= 0) && (i < mc.numberWidth) && (j >= 0) && (j < mc.numberHeight)) {
 					mc.chunkRender++;
-					pointToChunk(new Vector2(i, j)).render();
+					pointToChunk(new Vector2<Integer>(i, j)).render();
 				}
 			}
 		}
@@ -67,7 +69,7 @@ public class DepthVector {
 	}
 
 	//Возвращает чанк из позиции чанка по x,y (Не координаты, а позиции чанка)
-	private Chunk pointToChunk(Vector2 p){
+	private Chunk pointToChunk(Vector2<Integer> p){
 		//Оптимальный бинарный поиск массива (внешнего), где Y равен входному Y
 		int key = p.y;
 		int left = 0;
@@ -134,22 +136,12 @@ public class DepthVector {
 
 		return chunks.get(indexOnY).get(indexOnX);
 	}
-	
-	private Vector2 getPoint(int x, int y){
+
+	private Vector2<Integer> getPoint(int x, int y){
 		int delta = mc.borderSize/mc.chunkSize-1;//delta=0 (1-1)
 		int posWidth = (int) Math.ceil((double) x/mc.chunkSize+delta);//-1 т.к. нумерация в массиве с 0
 		int posHeight = (int) Math.ceil((double) y/mc.chunkSize+delta);//+1 т.к. добавлена обводка карты толщиной в 1 чанк для обработки выхода за карту
-		return new Vector2(posWidth, posHeight);
-	}
-
-	//Векторная переменная хранящая 2 параметра (Аналог Point для int)
-	public static class Vector2{
-		int x, y;
-
-		public Vector2(int x, int y){
-			this.x = x;
-			this.y = y;
-		}
+		return new Vector2<Integer>(posWidth, posHeight);
 	}
 }
 

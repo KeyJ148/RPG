@@ -19,8 +19,10 @@ public class Button extends Label{
             action();
         }
 
-        if (MouseHandler.mouseX > x-width/2 && MouseHandler.mouseX < x+width/2 &&
-            MouseHandler.mouseY > y-height/2 && MouseHandler.mouseY < y+height &&
+        if (MouseHandler.mouseX > obj.position.x-obj.rendering.getWidth()/2 &&
+            MouseHandler.mouseX < obj.position.x+obj.rendering.getWidth()/2 &&
+            MouseHandler.mouseY > obj.position.y-obj.rendering.getHeight()/2 &&
+            MouseHandler.mouseY < obj.position.y+obj.rendering.getHeight() &&
             MouseHandler.mouseDown1){
                 MouseHandler.lock();
                 action();

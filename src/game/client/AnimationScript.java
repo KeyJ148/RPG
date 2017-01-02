@@ -54,10 +54,9 @@ public class AnimationScript {
                 else delete = true;
             } else {
                 frameNow++;
-                obj.x += scripts[frameNow].x;
-                obj.y += scripts[frameNow].y;
-                obj.direction += scripts[frameNow].dir;
-                obj.directionDrawEqulas();
+                obj.position.x += scripts[frameNow].x;
+                obj.position.y += scripts[frameNow].y;
+                obj.position.setDirectionDraw(obj.position.getDirectionDraw() + scripts[frameNow].dir);
             }
         }
     }

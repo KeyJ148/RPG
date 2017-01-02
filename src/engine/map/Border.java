@@ -2,7 +2,8 @@ package engine.map;
 
 import engine.image.Mask;
 import engine.obj.Obj;
-import game.client.TextureManager;
+import engine.obj.components.Collision;
+import engine.obj.components.Position;
 
 public class Border extends Obj {
 	
@@ -11,11 +12,9 @@ public class Border extends Obj {
 	public static final int SOUTH = 2;
 	public static final int WEST = 3;
 	
-	private static final int size = 100;//Размер толщины каждой линии, ибо маска танка должна попасть внутрь
+	private static final int size = 100;//Размер толщины каждой линии, ибо маска объекта должна попасть внутрь
 
 	public Border(int roomWidth, int roomHeight, int type) {
-		super(0, 0, 0, 0, 0, false, TextureManager.sys_null);
-		
 		int x, y, w, h;
 		
 		switch (type){
@@ -51,12 +50,10 @@ public class Border extends Obj {
 			break;
 		}
 		
-		this.x = x;
-		this.y = y;
-		
-		mask = new Mask("mask.png", h, w);//Путь должен быть, иначе mask выкинет ошибку при парсе; height и width наоборот -- магия
-		mask.calc(x, y, 0);
-		mask.dynamic = false;
+		this.position = new Position(this, x, y, 0, 0);
+
+		//Путь должен быть, иначе mask выкинет ошибку при парсе; height и width наоборот -- магия
+		this.collision = new Collision(this, new Mask("mask.png", h, w));
 	}
 	
 	public static void createAll(Room room){

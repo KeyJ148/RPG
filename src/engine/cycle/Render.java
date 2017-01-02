@@ -1,9 +1,12 @@
 package engine.cycle;
 
 import engine.Global;
+import engine.Vector2;
+import engine.image.Camera;
+import engine.inf.title.Title;
 import engine.io.KeyboardHandler;
 import engine.io.MouseHandler;
-import engine.inf.title.Title;
+import engine.obj.Obj;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
@@ -59,16 +62,21 @@ public class Render{
 		
 		//заливка фона
 		if (Global.room.background != null){
-			int dxf,dyf;
+			Obj backgroundObj = new Obj(0, 0, 0, 0, Global.room.background);
+			backgroundObj.position.absolute = false;
+
 			int size = Global.room.background.getWidth();//Размер плитки с фоном
-			int startX = (int) ((Global.cameraX-Global.cameraXView) - (Global.cameraX-Global.cameraXView)%size);
-			int startY = (int) ((Global.cameraY-Global.cameraYView) - (Global.cameraY-Global.cameraYView)%size);
+			int startX = (int) ((Camera.absoluteX-Global.engine.render.getWidth()/2) -
+								(Camera.absoluteX-Global.engine.render.getWidth()/2)%size);
+			int startY = (int) ((Camera.absoluteY-Global.engine.render.getHeight()/2) -
+								(Camera.absoluteX-Global.engine.render.getHeight()/2)%size);
 			
 			for (int dy = startY; dy<=startY+getHeight()+size*2; dy+=size){
 				for (int dx = startX; dx<=startX+getWidth()+size*2; dx+=size){
-					dxf = (int) Math.round(Global.cameraXView - (Global.cameraX - dx));
-					dyf = (int) Math.round(Global.cameraYView - (Global.cameraY - dy));
-					Global.room.background.draw(dxf,dyf,0);
+					Vector2<Integer> relativePosition = Camera.toRelativePosition(new Vector2(dx, dy));
+					backgroundObj.position.x = relativePosition.x;
+					backgroundObj.position.y = relativePosition.y;
+					backgroundObj.draw();
 				}
 			}
 		} else {
@@ -151,7 +159,7 @@ public class Render{
 		Global.game.render();
 		
 		//Отрисовка объектов
-		Global.room.mapControl.render((int) Global.cameraX, (int) Global.cameraY, getWidth(), getHeight());
+		Global.room.mapControl.render((int) Camera.absoluteX, (int) Camera.absoluteY, getWidth(), getHeight());
 
 		//Отрисовка интерфейса
 		Global.infMain.draw();

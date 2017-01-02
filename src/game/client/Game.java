@@ -1,10 +1,11 @@
 package game.client;
 
 import engine.Global;
+import engine.image.Camera;
 import engine.io.KeyboardHandler;
 import engine.map.Room;
 import engine.obj.Obj;
-import engine.obj.ObjLight;
+import engine.obj.components.Collision;
 import game.client.person.Item;
 import game.client.person.Player;
 import org.lwjgl.input.Keyboard;
@@ -40,15 +41,16 @@ public class Game {
 	public void initAfterConnect(){
 		Global.tcpControl.send(6, "");
 
-		ObjLight obj = new ObjLight(Integer.MAX_VALUE/2,Integer.MAX_VALUE/2,90,1,TextureManager.cursor);
-		ObjLight obj1 = new ObjLight(Integer.MAX_VALUE/2-100,Integer.MAX_VALUE/2-100,90,1,TextureManager.cursor);
-		Obj obj2 = new Obj(Integer.MAX_VALUE/2+200,Integer.MAX_VALUE/2+200,0,90,1,false,TextureManager.enemy);
+		Obj obj = new Obj(Integer.MAX_VALUE/2,Integer.MAX_VALUE/2,1,90,TextureManager.cursor);
+		Obj obj1 = new Obj(Integer.MAX_VALUE/2-100,Integer.MAX_VALUE/2-100,1,90,TextureManager.cursor);
+		Obj obj2 = new Obj(Integer.MAX_VALUE/2+200,Integer.MAX_VALUE/2+200,0,90,TextureManager.enemy);
+		obj2.collision = new Collision(obj2, TextureManager.enemy.mask);
 		Global.room.objAdd(obj);
 		Global.room.objAdd(obj1);
 		Global.room.objAdd(obj2);
 
 		Player p = new Player(Integer.MAX_VALUE/2+100,Integer.MAX_VALUE/2+100,90);
-		Global.camera = p;
+		Camera.setFollowObject(p);
 		Global.room.objAdd(p);
 		p.addItem(new Item(Item.Grade.GRAY, Item.Type.HELMET));
 		Item item = new Item(Item.Grade.GREEN, Item.Type.HELMET);

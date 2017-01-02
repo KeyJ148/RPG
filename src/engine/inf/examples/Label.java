@@ -28,6 +28,9 @@ public class Label extends Inf {
         super.draw();
         String drawLabel = label;
         if (label.length() > limit) drawLabel = label.substring(0, limit-1) + "..";
-        Global.engine.render.addTitle(new Title(x-width/2+startTextX, y-height/2+startTextY, drawLabel, color, size, font));
+
+        int titleX = (int) obj.position.x-obj.rendering.getWidth()/2+startTextX;
+        int titleY = (int) obj.position.y-obj.rendering.getHeight()/2+startTextY;
+        Global.engine.render.addTitle(new Title(titleX, titleY, drawLabel, color, size, font));
     }
 }

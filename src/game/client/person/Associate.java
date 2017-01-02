@@ -1,24 +1,22 @@
 package game.client.person;
 
 import engine.obj.Obj;
+import engine.obj.components.Movement;
 import game.client.TextureManager;
 
 public class Associate extends Obj{
 
     public Associate(int x, int y, int direction, int speed, int directionDraw){
-        super(x, y, speed, direction, 0, true, TextureManager.associate);
-        setDirectionDraw(directionDraw);
+        super(x, y, 0, directionDraw, TextureManager.associate);
+        movement = new Movement(this, speed, direction);
+        movement.directionDrawEquals = false;
     }
 
     public void setData(int x, int y, int direction, int speed, int directionDraw){
-        this.x = x;
-        this.y = y;
-        this.speed = speed;
-        setDirection(direction);
-        setDirectionDraw(directionDraw);
+        this.position.x = x;
+        this.position.y = y;
+        this.movement.speed = speed;
+        this.movement.setDirection(direction);
+        this.position.setDirectionDraw(directionDraw);
     }
-
-    @Override
-    public void directionDrawEqulas(){}//Ибо персонаж смотрит в сторону атаки, а движется при этом в любую сторону
-
 }

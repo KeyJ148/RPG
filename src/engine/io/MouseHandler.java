@@ -1,14 +1,15 @@
 package engine.io;
 
-import org.lwjgl.input.Mouse;
-
 import engine.Global;
-import engine.image.Sprite;
+import engine.obj.Obj;
+import engine.obj.components.Position;
+import engine.obj.components.render.Sprite;
 import game.client.TextureManager;
+import org.lwjgl.input.Mouse;
 
 public class MouseHandler {
 	
-	public static Sprite cursor;
+	public static Obj cursor;
 
 	public static int mouseX;
 	public static int mouseY;
@@ -21,7 +22,11 @@ public class MouseHandler {
 		Mouse.setGrabbed(true);
 				
 		//Добавление своего курсора
-		cursor = new Sprite(TextureManager.cursor);
+		cursor = new Obj();
+		cursor.position = new Position(cursor, 0, 0, -1000);
+		cursor.position.absolute = false;
+		cursor.rendering = new Sprite(cursor, TextureManager.cursor);
+
 		mouseX = Mouse.getX();
 		mouseY = Global.engine.render.getHeight()-Mouse.getY();
 	}
@@ -36,7 +41,9 @@ public class MouseHandler {
 	}
 	
 	public static void draw(){
-		cursor.draw(mouseX, mouseY, 0.0);
+		cursor.position.x = mouseX;
+		cursor.position.y = mouseY;
+		cursor.draw();
 	}
 
 	//Блокирование данных, происходит при работе с интерфейсом

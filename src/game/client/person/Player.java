@@ -17,8 +17,9 @@ public class Player extends Person {
     }
 
     @Override
-    public void updateChildMid(long delta){
-        setDirectionDraw(Math.atan2(xView - MouseHandler.mouseX, yView - MouseHandler.mouseY) / Math.PI * 180 + 90);
+    public void update(long delta){
+        super.update(delta);
+        position.setDirectionDraw(Math.atan2(position.getRelativePosition().x - MouseHandler.mouseX, position.getRelativePosition().y - MouseHandler.mouseY) / Math.PI * 180 + 90);
 
         int deltaX = 0;
         int deltaY = 0;
@@ -27,18 +28,18 @@ public class Player extends Person {
         if (KeyboardHandler.isKeyDown(Keyboard.KEY_A)) deltaX--;
         if (KeyboardHandler.isKeyDown(Keyboard.KEY_D)) deltaX++;
 
-        speed = 0;
+        movement.speed = 0;
         if (deltaX != 0 || deltaY != 0){
-            speed = stats.speedRun;
+            movement.speed = stats.speedRun;
 
-            if (deltaX == -1 && deltaY == -1) direction = 135;
-            if (deltaX == -1 && deltaY == 0) direction = 180;
-            if (deltaX == -1 && deltaY == 1) direction = 225;
-            if (deltaX == 0 && deltaY == -1) direction = 90;
-            if (deltaX == 0 && deltaY == 1) direction = 270;
-            if (deltaX == 1 && deltaY == -1) direction = 45;
-            if (deltaX == 1 && deltaY == 0) direction = 0;
-            if (deltaX == 1 && deltaY == 1) direction = 315;
+            if (deltaX == -1 && deltaY == -1) movement.setDirection(135);
+            if (deltaX == -1 && deltaY == 0) movement.setDirection(180);
+            if (deltaX == -1 && deltaY == 1) movement.setDirection(225);
+            if (deltaX == 0 && deltaY == -1) movement.setDirection(90);
+            if (deltaX == 0 && deltaY == 1) movement.setDirection(270);
+            if (deltaX == 1 && deltaY == -1) movement.setDirection(45);
+            if (deltaX == 1 && deltaY == 0) movement.setDirection(0);
+            if (deltaX == 1 && deltaY == 1) movement.setDirection(315);
         }
 
         sendDataLastTicks++;
@@ -49,6 +50,6 @@ public class Player extends Person {
     }
 
     public String getData(){
-        return (int) x + " " + (int) y + " " + (int) getDirection() + " " + (int) speed + " " + (int) getDirectionDraw();
+        return (int) position.x + " " + (int) position.y + " " + (int) movement.getDirection() + " " + (int) movement.speed + " " + (int) position.getDirectionDraw();
     }
 }

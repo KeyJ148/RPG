@@ -72,8 +72,8 @@ public class Analyzer {
 			Global.engine.render.strAnalysis1 = strFPS1;
 			Global.engine.render.strAnalysis2 = strFPS2;
 		}
-		
-		
+
+
 		lastAnalysis = System.currentTimeMillis();
 		loopsUpdate = 0;
 		loopsRender = 0;

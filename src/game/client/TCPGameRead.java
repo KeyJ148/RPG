@@ -1,7 +1,6 @@
 package game.client;
 
 import engine.Global;
-import engine.image.Sprite;
 import game.client.person.Associate;
 
 public class TCPGameRead{
@@ -36,8 +35,8 @@ public class TCPGameRead{
 	}
 
 	public static void take3(String str){
-		if (str.equals("grass")) Global.room.background = new Sprite(TextureManager.background_grass);
-		if (str.equals("sand")) Global.room.background = new Sprite(TextureManager.background_sand);
+		if (str.equals("grass")) Global.room.background = TextureManager.background_grass;
+		if (str.equals("sand")) Global.room.background = TextureManager.background_sand;
 	}
 
 	public static void take4(String str){

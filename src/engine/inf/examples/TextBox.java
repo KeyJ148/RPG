@@ -31,9 +31,11 @@ public class TextBox extends Label{
             }
             KeyboardHandler.lock();
         } else {
-            if (MouseHandler.mouseX > x-width/2 && MouseHandler.mouseX < x+width/2 &&
-                    MouseHandler.mouseY > y-height/2 && MouseHandler.mouseY < y+height &&
-                    MouseHandler.mouseDown1){
+            if (MouseHandler.mouseX > obj.position.x-obj.rendering.getWidth()/2 &&
+                MouseHandler.mouseX < obj.position.x+obj.rendering.getWidth()/2 &&
+                MouseHandler.mouseY > obj.position.y-obj.rendering.getHeight()/2 &&
+                MouseHandler.mouseY < obj.position.y+obj.rendering.getHeight() &&
+                MouseHandler.mouseDown1){
                 allDeactivation();
                 active = true;
                 MouseHandler.lock();

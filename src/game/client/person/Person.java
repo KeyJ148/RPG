@@ -2,6 +2,7 @@ package game.client.person;
 
 import engine.image.TextureHandler;
 import engine.obj.Obj;
+import engine.obj.components.Movement;
 
 import java.util.ArrayList;
 
@@ -42,7 +43,9 @@ public class Person extends Obj {
     }
 
     public Person(double x, double y, double dir, TextureHandler texture){
-        super(x, y, 0, dir, 0, true, texture);
+        super(x, y, 0, dir, texture);
+        movement = new Movement(this);
+        movement.directionDrawEquals = false;
 
         statsDefault.maxHp = 100; statsDefault.maxMp = 100;
         statsDefault.pDmg = 20; statsDefault.mDmg = 20;
@@ -110,6 +113,4 @@ public class Person extends Obj {
         return null;
     }
 
-    @Override
-    public void directionDrawEqulas(){}//Ибо персонаж смотрит в сторону атаки, а движется при этом в любую сторону
 }
