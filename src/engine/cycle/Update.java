@@ -16,7 +16,7 @@ public class Update {
 		if (Global.room != null) {
 			Global.room.update(delta);//Обновить все объекты в комнате
 		}else {
-			Logger.error("No create room! (Global.room)");
+			Logger.println("No create room! (Global.room)", Logger.Type.ERROR);
 			System.exit(0);
 		}
 

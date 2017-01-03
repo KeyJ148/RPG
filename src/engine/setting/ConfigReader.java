@@ -34,13 +34,13 @@ public class ConfigReader {
 				}
 				
 			}
-			Logger.error("No find setting: " + findName);
+			Logger.println("No find setting: " + findName, Logger.Type.ERROR);
 			fileReader.close();
 			return "";
 		} catch (IOException e){
-			Logger.error("Exception in read " + path);
+			Logger.println("Exception in read " + path, Logger.Type.ERROR);
 		}
-		Logger.error("No find setting: " + findName);
+		Logger.println("No find setting: " + findName, Logger.Type.ERROR);
 		return "";
 	}
 	

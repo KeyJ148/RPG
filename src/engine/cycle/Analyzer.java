@@ -1,6 +1,7 @@
 package engine.cycle;
 
 import engine.Global;
+import engine.io.Logger;
 import engine.net.client.Ping;
 
 public class Analyzer {
@@ -63,11 +64,10 @@ public class Analyzer {
 				+ "          Duration update/render: " + (durationUpdate/loopsUpdate/1000) + "/" + (durationRender/loopsRender/1000) + " mks"
 				+ "          Objects: " + Global.room.objCount()
 				+ "          Chunks: " + Global.room.mapControl.chunkRender;
-				
-		if (Global.setting.DEBUG_CONSOLE_FPS){
-			System.out.println(strFPS1);
-			System.out.println(strFPS2);
-		}
+
+		Logger.println(strFPS1, Logger.Type.CONSOLE_FPS);
+		Logger.println(strFPS2, Logger.Type.CONSOLE_FPS);
+
 		if (Global.setting.DEBUG_MONITOR_FPS){
 			Global.engine.render.strAnalysis1 = strFPS1;
 			Global.engine.render.strAnalysis2 = strFPS2;

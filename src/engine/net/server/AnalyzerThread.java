@@ -1,5 +1,7 @@
 package engine.net.server;
 
+import engine.io.Logger;
+
 public class AnalyzerThread extends Thread{
 
     @Override
@@ -10,12 +12,13 @@ public class AnalyzerThread extends Thread{
         while (true){
             if (System.currentTimeMillis() > timeAnalysis+timeAnalysisDelta){//Анализ MPS
                 timeAnalysis = System.currentTimeMillis();
-                System.out.print("MPS: ");
+                Logger.print("MPS: ", Logger.Type.MPS);
                 for (int i = 0; i < GameServer.peopleMax; i++){
-                    System.out.print(GameServer.numberSend[i] + " | ");
+                    Logger.print(String.valueOf(GameServer.numberSend[i]), Logger.Type.MPS);
+                    if (i != GameServer.peopleMax-1) Logger.print(" | ", Logger.Type.MPS);
                     GameServer.numberSend[i] = 0;
                 }
-                System.out.println();
+                Logger.println("", Logger.Type.MPS);
             }
 
             try {

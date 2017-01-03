@@ -1,7 +1,7 @@
 package game.client;
 
 import engine.Global;
-import game.client.person.Associate;
+import game.client.person.Ally;
 
 public class TCPGameRead{
 
@@ -24,13 +24,13 @@ public class TCPGameRead{
 		int directionDraw = Integer.parseInt(data[4]);
 		int id = Integer.parseInt(data[5]);
 
-		if (ClientData.associates != null){
-			if (ClientData.associates[id] == null){
-				ClientData.associates[id] = new Associate(x, y, direction, speed, directionDraw);
-				Global.room.objAdd(ClientData.associates[id]);
+		if (ClientData.allies != null){
+			if (ClientData.allies[id] == null){
+				ClientData.allies[id] = new Ally(x, y, direction, speed, directionDraw);
+				Global.room.objAdd(ClientData.allies[id]);
 			}
 
-			ClientData.associates[id].setData(x, y, direction, speed, directionDraw);
+			ClientData.allies[id].setData(x, y, direction, speed, directionDraw);
 		}
 	}
 
@@ -41,7 +41,7 @@ public class TCPGameRead{
 
 	public static void take4(String str){
 		ClientData.peopleMax = Integer.parseInt(str);
-		ClientData.associates = new Associate[ClientData.peopleMax];//ќдин будет пустой, соответствующий id этого клиента
+		ClientData.allies = new Ally[ClientData.peopleMax];//ќдин будет пустой, соответствующий id этого клиента
 	}
 
 	public static void take5(String str) {

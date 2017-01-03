@@ -3,6 +3,8 @@ package game.client.person;
 import engine.Global;
 import engine.io.KeyboardHandler;
 import engine.io.MouseHandler;
+import engine.obj.Obj;
+import engine.obj.components.Movement;
 import game.client.ClientData;
 import game.client.TextureManager;
 import org.lwjgl.input.Keyboard;
@@ -12,8 +14,26 @@ public class Player extends Person {
     private static final int sendDataEveryTicks = 2;//Отправлять данные каждые N степов
     private int sendDataLastTicks = 0;
 
+    private Obj armor;
+    private Obj face;
+    private Obj hair;
+
     public Player(double x, double y, double dir) {
-        super(x, y, dir, TextureManager.player);
+        super(x, y, dir, TextureManager.human_body);
+        position.depth = -1;
+        
+        armor = new Obj(x, y, -2, dir, TextureManager.peasant_armor);
+        face = new Obj(x, y, -3, dir, TextureManager.human_head_face);
+        hair = new Obj(x, y, -4, dir, TextureManager.human_head_hair);
+        armor.movement = new Movement(armor, 0, 0);
+        face.movement = new Movement(face, 0, 0);
+        hair.movement = new Movement(hair, 0, 0);
+        armor.follow = this;
+        face.follow = this;
+        hair.follow = this;
+        Global.room.objAdd(armor);
+        Global.room.objAdd(face);
+        Global.room.objAdd(hair);
     }
 
     @Override

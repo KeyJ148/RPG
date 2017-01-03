@@ -22,16 +22,16 @@ public class Loader {
 			System.loadLibrary("jinput-raw");
 			System.loadLibrary("lwjgl");
 			System.loadLibrary("OpenAL32");
-            Logger.p("32-bit native module load complite");
+            Logger.println("32-bit native module load complite", Logger.Type.DEBUG);
 		} catch (UnsatisfiedLinkError e32){
 			try{
 				System.loadLibrary("jinput-dx8_64");
 				System.loadLibrary("jinput-raw_64");
 				System.loadLibrary("lwjgl64");
 				System.loadLibrary("OpenAL64");
-                Logger.p("64-bit native module load complite");
+                Logger.println("64-bit native module load complite", Logger.Type.DEBUG);
 			} catch (UnsatisfiedLinkError e64){
-                Logger.error("Native module not loading");
+                Logger.println("Native module not loading", Logger.Type.ERROR);
 				System.exit(0);
 			}
 		}
@@ -46,8 +46,13 @@ public class Loader {
 
 		Global.setting = new SettingStorage();//Создание хранилища настроек
 		Global.setting.init();//Загрузка настроек
+		if (Global.setting.DEBUG_CONSOLE) Logger.enable(Logger.Type.DEBUG);
+		if (Global.setting.DEBUG_CONSOLE_OBJECT) Logger.enable(Logger.Type.DEBUG_OBJECT);
+		if (Global.setting.DEBUG_CONSOLE_IMAGE) Logger.enable(Logger.Type.DEBUG_IMAGE);
+		if (Global.setting.DEBUG_CONSOLE_MASK) Logger.enable(Logger.Type.DEBUG_MASK);
+		if (Global.setting.DEBUG_CONSOLE_FPS) Logger.enable(Logger.Type.CONSOLE_FPS);
+
 		Global.engine = new Engine();//Создание класса для главного цикла
-		
 		Global.engine.render.initGL();//Инициализация OpenGL
 			
 		Global.tcpControl = new TCPControl();
@@ -61,7 +66,7 @@ public class Loader {
 		if ((Global.setting.DEBUG_CONSOLE_FPS) || (Global.setting.DEBUG_MONITOR_FPS)) 
 			Global.engine.analyzer = new Analyzer();
 		
-		if (Global.setting.DEBUG_CONSOLE) Logger.p("Inicialization end.");
+		Logger.println("Inicialization end", Logger.Type.DEBUG);
 		
 		//Инициализация игры
 		Global.game = new Game();

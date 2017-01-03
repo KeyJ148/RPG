@@ -1,6 +1,5 @@
 package engine.image;
 
-import engine.Global;
 import engine.Vector2;
 import engine.io.Logger;
 
@@ -44,11 +43,11 @@ public class Mask {
                 maskArr.add(new Vector2(x, y));
             }
 
-            if (Global.setting.DEBUG_CONSOLE_MASK) Logger.p("Load mask \"" + path + "\" complited.");
+            Logger.println("Load mask \"" + path + "\" complited", Logger.Type.DEBUG_MASK);
             Vector2<Integer>[] result = new Vector2[maskArr.size()];
             return maskArr.toArray(result);
         } catch (IOException e) {
-            Logger.error("Load mask \"" + path +"\" error.");
+            Logger.println("Load mask \"" + path +"\" error", Logger.Type.ERROR);
         }
 
         return createDefault(width, height);

@@ -1,5 +1,7 @@
 package engine.net.server;
 
+import engine.io.Logger;
+
 import java.io.IOException;
 
 public class ServerRead extends Thread{
@@ -25,7 +27,7 @@ public class ServerRead extends Thread{
 				}
 			}
 		} catch (IOException e){
-			GameServer.p("Player disconnect (id: " + id + ")");
+			Logger.println("Player disconnect (id: " + id + ")", Logger.Type.SERVER_INFO);
 			GameServer.disconnect++;
 			disconnect = true;
 		}

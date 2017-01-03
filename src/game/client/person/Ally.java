@@ -4,9 +4,9 @@ import engine.obj.Obj;
 import engine.obj.components.Movement;
 import game.client.TextureManager;
 
-public class Associate extends Obj{
+public class Ally extends Obj{
 
-    public Associate(int x, int y, int direction, int speed, int directionDraw){
+    public Ally(int x, int y, int direction, int speed, int directionDraw){
         super(x, y, 0, directionDraw, TextureManager.associate);
         movement = new Movement(this, speed, direction);
         movement.directionDrawEquals = false;

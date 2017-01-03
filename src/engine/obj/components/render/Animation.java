@@ -66,7 +66,7 @@ public class Animation extends Rendering{
 
 	public void setFrameSpeed(int frameSpeed) {
 		if (frameSpeed < 0){
-			Logger.error("Frame speed must be >= 0");
+			Logger.println("Frame speed must be >= 0", Logger.Type.ERROR);
 			return;
 		}
 

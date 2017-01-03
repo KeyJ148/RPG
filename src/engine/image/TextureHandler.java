@@ -1,6 +1,5 @@
 package engine.image;
 
-import engine.Global;
 import engine.io.Logger;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
@@ -17,9 +16,9 @@ public class TextureHandler {
 	public TextureHandler(String path) {
 		try {
 			this.texture = TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream(path));
-			if (Global.setting.DEBUG_CONSOLE_IMAGE) Logger.p("Load image \"" + path + "\" complited");
+			Logger.println("Load image \"" + path + "\" complited", Logger.Type.DEBUG_IMAGE);
 		} catch (IOException e1) {
-			Logger.error("Image \"" + path + "\" not loading");
+			Logger.println("Image \"" + path + "\" not loading", Logger.Type.ERROR);
 		}
 		this.path = path;
 		this.mask = new Mask(path, getWidth(), getHeight());

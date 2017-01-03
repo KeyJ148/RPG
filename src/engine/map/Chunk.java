@@ -2,7 +2,6 @@ package engine.map;
 
 import engine.Global;
 import engine.obj.Obj;
-import game.client.person.Player;
 
 import java.util.ArrayList;
 

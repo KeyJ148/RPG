@@ -26,6 +26,10 @@ public class GameServer{
 	public static int[] numberSend;
 	
 	public static void initSettings(String args[]){
+		Logger.enable(Logger.Type.SERVER_INFO);
+		Logger.enable(Logger.Type.SERVER_ERROR);
+		Logger.enable(Logger.Type.MPS);
+
 		try{
 			BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
 			String str;
@@ -66,7 +70,7 @@ public class GameServer{
 				}
 			}
 		} catch (IOException e){
-			Logger.error("Failed io text.");
+			Logger.println("Failed io text", Logger.Type.ERROR);
 			System.exit(0);
 		}
 	}
@@ -85,7 +89,7 @@ public class GameServer{
 			ServerSocket ServerSocket = new ServerSocket(port);
 			peopleNow = 0;
 
-			GameServer.p("Server started.");
+			Logger.println("Server started", Logger.Type.SERVER_INFO);
 
 			while (peopleNow != peopleMax) {
 				Socket sock = ServerSocket.accept();
@@ -99,18 +103,18 @@ public class GameServer{
 				in[peopleNow] = new DataInputStream(sock.getInputStream());
 				out[peopleNow] = new DataOutputStream(sock.getOutputStream());
 				messagePack[peopleNow] = new MessagePack(peopleNow);
-				GameServer.p("New client (" + (peopleNow + 1) + "/" + peopleMax + ")");
+				Logger.println("New client (" + (peopleNow + 1) + "/" + peopleMax + ")", Logger.Type.SERVER_INFO);
 				serverRead[peopleNow] = new ServerRead(peopleNow);
 				peopleNow++;
 			}
 			ServerSocket.close();
 
-			GameServer.p("All users connected.");
+			Logger.println("All users connected", Logger.Type.SERVER_INFO);
 
 			new AnalyzerThread().start();//Старт отдельного потока для анализатора
 			processingData();//Старт бессконечно цикла с обработкой данных
 		} catch (IOException e){
-            Logger.error("Failed server start.");
+            Logger.println("Failed server start", Logger.Type.SERVER_ERROR);
 			System.exit(0);
 		}
 	}
@@ -141,7 +145,7 @@ public class GameServer{
 			if (!GameServer.maxPower) try {Thread.sleep(0,1);} catch (InterruptedException e) {}
 		}
 
-		GameServer.p("All user disconnect!");
+		Logger.println("All user disconnect!", Logger.Type.SERVER_INFO);
 		System.exit(0);
 	}
 
@@ -155,7 +159,7 @@ public class GameServer{
 			}
 			numberSend[id]++; //Кол-во отправленных пакетов
 		} catch (IOException e) {
-			if (!GameServer.serverRead[id].disconnect) GameServer.error("Send message failed");
+			if (!GameServer.serverRead[id].disconnect) Logger.print("Send message failed", Logger.Type.SERVER_ERROR);
 		}
 	}
 
@@ -171,14 +175,6 @@ public class GameServer{
 		for(int i=0; i<peopleMax; i++){//Отправляем сообщение всем
 			GameServer.send(i, type, str);
 		}
-	}
-
-	public static void error(String s){
-		System.out.println("[ERROR] " + s);
-	}
-	
-	public static void p(String s){
-		System.out.println("[INFO] " + s);
 	}
 	
 	public static void main(String args[]){

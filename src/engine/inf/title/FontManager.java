@@ -37,7 +37,7 @@ public class FontManager {
 			fontArray.add(font);
 			return ttFontArray.size() - 1;
 		} catch (FontFormatException | IOException e){
-			Logger.error("Create font");
+			Logger.println("Create font", Logger.Type.ERROR);
 		}
 
 		return -1;

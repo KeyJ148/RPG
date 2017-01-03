@@ -1,5 +1,6 @@
 package engine.obj;
 
+import engine.Global;
 import engine.image.TextureHandler;
 import engine.obj.components.Collision;
 import engine.obj.components.Movement;
@@ -9,14 +10,13 @@ import engine.obj.components.render.Rendering;
 import engine.obj.components.render.Sprite;
 
 public class Obj {
-	public boolean destroy = false;
-
 	public Position position;
 	public Movement movement;
 	public Rendering rendering;
 	public Collision collision;
-	
-	private boolean collHave = false;//есть ли столкновения
+
+	public boolean destroy = false;
+	public Obj follow;
 
 	public Obj(){}
 
@@ -47,6 +47,15 @@ public class Obj {
 		if (collision != null) collision.update(delta);
 
 		if (destroy) position.room.objDel(position.id);
+	}
+
+	public void updateFollow(){
+		if (follow != null && follow.position != null){
+			position.x = follow.position.x;
+			position.y = follow.position.y;
+			position.setDirectionDraw(follow.position.getDirectionDraw());
+			Global.room.mapControl.update(this);
+		}
 	}
 
 	public void draw(){

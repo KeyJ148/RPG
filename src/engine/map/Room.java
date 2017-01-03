@@ -22,9 +22,12 @@ public class Room {
 	}
 
 	public void update(long delta){
-		for (Obj obj : objects)
-			if (obj != null)
-				obj.update(delta);
+		for (Obj obj : objects) {
+			if (obj != null) obj.update(delta);
+		}
+		for (Obj obj : objects) {
+			if (obj != null) obj.updateFollow();
+		}
 	}
 
 	public int objCount(){

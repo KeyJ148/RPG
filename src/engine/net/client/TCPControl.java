@@ -35,7 +35,7 @@ public class TCPControl {
 			this.in = in;
 			this.out = out;
 		} catch(IOException e){
-			Logger.error("Connection failed");
+			Logger.println("Connection failed", Logger.Type.ERROR);
 			System.exit(0);
 		}
 	}
@@ -48,7 +48,7 @@ public class TCPControl {
 				out.writeUTF(type + " " + str);
 			}
 		} catch (IOException e){
-			Logger.error("Send internet message");
+			Logger.println("Send internet message", Logger.Type.ERROR);
 			System.exit(0);
 		}
 	}
@@ -61,7 +61,7 @@ public class TCPControl {
 			}
 			return str;
 		} catch (IOException e){
-			Logger.error("Read internet message");
+			Logger.println("Read internet message", Logger.Type.ERROR);
 			System.exit(0);
 			return null;
 		}
