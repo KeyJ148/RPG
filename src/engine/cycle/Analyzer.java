@@ -45,7 +45,6 @@ public class Analyzer {
 		pingMid = Global.pingCheck.pingMid();
 		pingMax = Global.pingCheck.pingMax();
 
-
 		send = Math.round(Global.tcpControl.sizeDataSend/1024);
 		load = Math.round(Global.tcpControl.sizeDataRead/1024);
 		Global.tcpControl.sizeDataSend = 0;
@@ -72,7 +71,6 @@ public class Analyzer {
 			Global.engine.render.strAnalysis1 = strFPS1;
 			Global.engine.render.strAnalysis2 = strFPS2;
 		}
-
 
 		lastAnalysis = System.currentTimeMillis();
 		loopsUpdate = 0;

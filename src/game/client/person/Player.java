@@ -7,12 +7,20 @@ import engine.obj.Obj;
 import engine.obj.components.Movement;
 import game.client.ClientData;
 import game.client.TextureManager;
+import game.client.particles.ParticlesTraces;
 import org.lwjgl.input.Keyboard;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Player extends Person {
 
     private static final int sendDataEveryTicks = 2;//Отправлять данные каждые N степов
-    private int sendDataLastTicks = 0;
+    private int sendDataLastTicks = 0;//Как давно отправляли данные
+
+    private static final int createTracesEveryTicks = 30;//Создавать следы ходьбы каждые N степов
+    private int createTracesLastTicks = 0;//Как давно создавали следы ходьбы
+    private ArrayList<Obj> tracesArray = new ArrayList<>();
 
     private Obj armor;
     private Obj face;
@@ -60,6 +68,22 @@ public class Player extends Person {
             if (deltaX == 1 && deltaY == -1) movement.setDirection(45);
             if (deltaX == 1 && deltaY == 0) movement.setDirection(0);
             if (deltaX == 1 && deltaY == 1) movement.setDirection(315);
+
+            createTracesLastTicks++;
+            if (createTracesLastTicks >= createTracesEveryTicks){
+                createTracesLastTicks = 0;
+                Obj traces = new Obj(position.x, position.y, 0, movement.getDirection());
+                traces.particles = new ParticlesTraces(traces);
+
+                tracesArray.add(traces);
+                Global.room.objAdd(traces);
+            }
+
+            Iterator<Obj> iterator = tracesArray.iterator();
+            while(iterator.hasNext()){
+                Obj obj = iterator.next();
+                if (obj.particles.parts.size() == 0) obj.destroy();
+            }
         }
 
         sendDataLastTicks++;

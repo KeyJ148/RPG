@@ -4,6 +4,7 @@ import engine.Global;
 import engine.image.TextureHandler;
 import engine.obj.components.Collision;
 import engine.obj.components.Movement;
+import engine.obj.components.particles.Particles;
 import engine.obj.components.Position;
 import engine.obj.components.render.Animation;
 import engine.obj.components.render.Rendering;
@@ -14,6 +15,7 @@ public class Obj {
 	public Movement movement;
 	public Rendering rendering;
 	public Collision collision;
+	public Particles particles;
 
 	public boolean destroy = false;
 	public Obj follow;
@@ -45,6 +47,7 @@ public class Obj {
 		if (movement != null) movement.update(delta);
 		if (rendering != null) rendering.update(delta);
 		if (collision != null) collision.update(delta);
+		if (particles != null) particles.update(delta);
 
 		if (destroy) position.room.objDel(position.id);
 	}
@@ -63,6 +66,7 @@ public class Obj {
 		if (movement != null) movement.draw();
 		if (rendering != null) rendering.draw();
 		if (collision != null) collision.draw();
+		if (particles != null) particles.draw();
 	}
 
 	public void destroy(){

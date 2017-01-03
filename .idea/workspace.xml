@@ -1,75 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ef32d60-0a86-4b44-a938-a23e09dcf4ee" name="Default" comment="v3.3.0&#10;Движок обновлен до v5.1.4&#10;Добавлены спрайты игрока&#10;Переименован класс союзника">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/engine/io/Logger$Type.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Ally.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Equipment/Armor/peasant_armor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/human_body.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/human_head_face.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/human_head_hair.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/peasant_armor_hand_fist_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/peasant_armor_hand_fist_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/peasant_armor_hand_fist_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/peasant_armor_hand_forearm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/image/Person/Human/peasant_armor_hand_shoulder.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/person/Associate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Home/home_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Home/home_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Home/tree.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Interface/button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Interface/item.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Interface/window.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Skill/skill_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/image/Skill/skill_2.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/Loader.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/Loader.class" />
+    <list default="true" id="9ef32d60-0a86-4b44-a938-a23e09dcf4ee" name="Default" comment="v3.4.0&#10;Движок обновлен до v6.0.4&#10;Сделан пример системы частиц: следы от ходьбы">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/client/particles/ParticlesTraces.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Analyzer.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Analyzer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Render.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Render.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Update.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/cycle/Update.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/image/Mask.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/image/Mask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/image/TextureHandler.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/image/TextureHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/FontManager.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/inf/title/FontManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/io/Logger.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/io/Logger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/map/Chunk.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/map/Chunk.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/map/DepthVector.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/map/DepthVector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/map/Room.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/map/Room.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/client/TCPControl.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/client/TCPControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/server/AnalyzerThread.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/server/AnalyzerThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/server/GameServer.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/server/GameServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/server/MessagePack.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/server/MessagePack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/net/server/ServerRead.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/net/server/ServerRead.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/obj/Obj.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/obj/Obj.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/obj/components/render/Animation.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/obj/components/render/Animation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/engine/setting/ConfigReader.class" afterPath="$PROJECT_DIR$/out/production/Engine/engine/setting/ConfigReader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/ClientData.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/ClientData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/TCPGameRead.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/TCPGameRead.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/TextureManager.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/TextureManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Engine/game/client/person/Player.class" afterPath="$PROJECT_DIR$/out/production/Engine/game/client/person/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Compile.bat" afterPath="$PROJECT_DIR$/Compile.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/Loader.java" afterPath="$PROJECT_DIR$/src/engine/Loader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cycle/Analyzer.java" afterPath="$PROJECT_DIR$/src/engine/cycle/Analyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cycle/Render.java" afterPath="$PROJECT_DIR$/src/engine/cycle/Render.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cycle/Update.java" afterPath="$PROJECT_DIR$/src/engine/cycle/Update.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/image/Mask.java" afterPath="$PROJECT_DIR$/src/engine/image/Mask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/image/TextureHandler.java" afterPath="$PROJECT_DIR$/src/engine/image/TextureHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/inf/title/FontManager.java" afterPath="$PROJECT_DIR$/src/engine/inf/title/FontManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/io/Logger.java" afterPath="$PROJECT_DIR$/src/engine/io/Logger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/map/Chunk.java" afterPath="$PROJECT_DIR$/src/engine/map/Chunk.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/map/Room.java" afterPath="$PROJECT_DIR$/src/engine/map/Room.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/net/client/TCPControl.java" afterPath="$PROJECT_DIR$/src/engine/net/client/TCPControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/net/server/AnalyzerThread.java" afterPath="$PROJECT_DIR$/src/engine/net/server/AnalyzerThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/net/server/GameServer.java" afterPath="$PROJECT_DIR$/src/engine/net/server/GameServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/net/server/MessagePack.java" afterPath="$PROJECT_DIR$/src/engine/net/server/MessagePack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/net/server/ServerRead.java" afterPath="$PROJECT_DIR$/src/engine/net/server/ServerRead.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/obj/Obj.java" afterPath="$PROJECT_DIR$/src/engine/obj/Obj.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/obj/components/render/Animation.java" afterPath="$PROJECT_DIR$/src/engine/obj/components/render/Animation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/setting/ConfigReader.java" afterPath="$PROJECT_DIR$/src/engine/setting/ConfigReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/ClientData.java" afterPath="$PROJECT_DIR$/src/game/client/ClientData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/TCPGameRead.java" afterPath="$PROJECT_DIR$/src/game/client/TCPGameRead.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/TextureManager.java" afterPath="$PROJECT_DIR$/src/game/client/TextureManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/client/person/Player.java" afterPath="$PROJECT_DIR$/src/game/client/person/Player.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/game/client/person/Associate.java" afterPath="$PROJECT_DIR$/src/game/client/person/Ally.java" />
     </list>
     <ignored path="Engine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,61 +35,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Render.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/cycle/Render.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/client/person/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/client/person/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            <state relative-caret-position="365">
+              <caret line="84" column="62" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Global.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/Global.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/client/Game.java">
+      <file leaf-file-name="ParticlesTraces.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/client/particles/ParticlesTraces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="207">
+              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/client/Menu.java">
+      <file leaf-file-name="Part.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/obj/components/particles/Part.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="902">
-              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Obj.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/obj/Obj.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+            <state relative-caret-position="192">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -178,11 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/engine/cycle/Analyzer.java" />
-        <option value="$PROJECT_DIR$/src/game/server/ServerLoader.java" />
-        <option value="$PROJECT_DIR$/src/game/client/character/Character.java" />
-        <option value="$PROJECT_DIR$/src/game/client/character/Person.java" />
-        <option value="$PROJECT_DIR$/src/game/client/character/Item.java" />
         <option value="$PROJECT_DIR$/src/game/client/character/Stats.java" />
         <option value="$PROJECT_DIR$/src/game/client/person/Item.java" />
         <option value="$PROJECT_DIR$/src/game/client/person/Effect.java" />
@@ -225,10 +146,15 @@
         <option value="$PROJECT_DIR$/src/game/client/TextureManager.java" />
         <option value="$PROJECT_DIR$/src/engine/obj/components/Position.java" />
         <option value="$PROJECT_DIR$/src/engine/cycle/Render.java" />
-        <option value="$PROJECT_DIR$/src/engine/map/Room.java" />
         <option value="$PROJECT_DIR$/src/engine/obj/Obj.java" />
         <option value="$PROJECT_DIR$/src/engine/map/DepthVector.java" />
+        <option value="$PROJECT_DIR$/src/game/client/particles/Traces.java" />
+        <option value="$PROJECT_DIR$/src/engine/map/Room.java" />
+        <option value="$PROJECT_DIR$/src/engine/obj/components/particles/ParticlesGeometry.java" />
+        <option value="$PROJECT_DIR$/src/engine/obj/components/particles/Part.java" />
+        <option value="$PROJECT_DIR$/src/engine/obj/components/particles/Particles.java" />
         <option value="$PROJECT_DIR$/src/game/client/person/Player.java" />
+        <option value="$PROJECT_DIR$/src/game/client/particles/ParticlesTraces.java" />
       </list>
     </option>
   </component>
@@ -242,7 +168,7 @@
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1859" />
-    <option name="height" value="1092" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -294,7 +220,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -379,7 +304,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="person" />
+              <option name="myItemId" value="particles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,6 +323,106 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="setting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="particles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -483,12 +508,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Engine" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -710,30 +736,30 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1859" height="1092" extended-state="0" />
+    <frame x="-9" y="-9" width="1859" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18848452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.289282" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2554974" sideWeight="0.50190115" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28199792" sideWeight="0.49809885" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18848452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.289282" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2827225" sideWeight="0.49809885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -748,7 +774,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v2.1.0&#10;Сервер создаётся в отдельном потоке.&#10;Из настроек убран параметр SEND_MILLIS." />
     <MESSAGE value="v2.2.0&#10;Вывод данных в консоль и в файл перенесены в Logger." />
     <MESSAGE value="v2.3.0&#10;Из Global убрана функция разбиения на строки." />
     <MESSAGE value="v3.0.0&#10;Полностью переделана архитектура сервера." />
@@ -773,7 +798,8 @@
     <MESSAGE value="v3.1.1&#10;Добавлены class-файлы к предыдущей версии" />
     <MESSAGE value="v3.1.2&#10;Движок обновлен до v4.1.1&#10;Переведена надпись в меню" />
     <MESSAGE value="v3.1.3&#10;По сети теперь передается скорость и направление&#10;Убран вывод тестовых сообщений при старте&#10;Переименован заголовок окна" />
-    <option name="LAST_COMMIT_MESSAGE" value="v3.1.3&#10;По сети теперь передается скорость и направление&#10;Убран вывод тестовых сообщений при старте&#10;Переименован заголовок окна" />
+    <MESSAGE value="v3.3.0&#10;Движок обновлен до v5.2.0&#10;Добавлены спрайты игрока&#10;Игрок всегда поверх союзников и врага&#10;Переименован класс союзника" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3.3.0&#10;Движок обновлен до v5.2.0&#10;Добавлены спрайты игрока&#10;Игрок всегда поверх союзников и врага&#10;Переименован класс союзника" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -782,42 +808,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/engine/Global.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="149" column="11" selection-start-line="149" selection-start-column="11" selection-end-line="149" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/cycle/Analyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/obj/ObjLight.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/jre/lib/rt.jar!/sun/font/Font2D.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1386">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/slick-util.jar!/org/newdawn/slick/util/ResourceLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/awt/Font.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -1003,13 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/obj/components/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/obj/components/Component.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1021,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,13 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/map/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/map/MapControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -1071,14 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/obj/Obj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,7 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="902">
           <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,15 +1075,91 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/obj/components/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/obj/components/particles/ParticlesGeometry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/slick-util.jar!/org/newdawn/slick/Color.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/obj/components/particles/Part.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/obj/components/particles/Particles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/map/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/obj/Obj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+          <folding>
+            <element signature="e#2094#2095#0" expanded="true" />
+            <element signature="e#2115#2116#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/client/person/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        <state relative-caret-position="365">
+          <caret line="84" column="62" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/Global.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/client/particles/ParticlesTraces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1127,6 +1169,18 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
