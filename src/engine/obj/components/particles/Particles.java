@@ -11,6 +11,7 @@ public abstract class Particles extends Component {
 
     public Set<Part> parts = new HashSet<>();
     public boolean rotate = false;
+    public boolean destroyObject = false;//Удалить объект использующий эту систему частиц после окончания системы частиц
 
     public Particles(Obj obj) {
         super(obj);
@@ -27,6 +28,8 @@ public abstract class Particles extends Component {
             if (part.life <= 0) iterator.remove();
             else updateChild(delta, part);
         }
+
+        if (parts.size() == 0 && destroyObject) getObj().destroy();
     }
 
     //Метод переопределяется в наследниках для обработки каждый степ
