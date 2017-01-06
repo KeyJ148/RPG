@@ -82,4 +82,8 @@ public class MapControl {
 			depthVectors.get(i).render(x, y, width, height);
 		}
 	}
+
+	public int getCountDepthVectors(){
+		return depthVectors.size();
+	}
 }

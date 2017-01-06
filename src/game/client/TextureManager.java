@@ -9,6 +9,9 @@ public class TextureManager {
 	public static TextureHandler sys_null;//Системная пустая текстура
 	public static TextureHandler cursor; //Системная текстура курсора
 
+	public static TextureHandler interface_window_degree;
+	public static TextureHandler interface_window_wall;
+
 	public static TextureHandler human_body;
 	public static TextureHandler human_head_face;
 	public static TextureHandler human_head_hair;
@@ -36,6 +39,9 @@ public class TextureManager {
 		
 		TextureManager.sys_null = new TextureHandler(pathImage + "Sys/sys_null.png");
 		TextureManager.cursor = new TextureHandler(pathImage + "Sys/cursor.png");
+
+		TextureManager.interface_window_degree = new TextureHandler(pathImage + "Interface/window_degree.png");
+		TextureManager.interface_window_wall = new TextureHandler(pathImage + "Interface/window_wall.png");
 
 		TextureManager.human_body = new TextureHandler(pathImage + "Person/Human/human_body.png");
 		TextureManager.human_head_face = new TextureHandler(pathImage + "Person/Human/human_head_face.png");
