@@ -5,8 +5,8 @@ import engine.image.TextureHandler;
 import engine.inf.Inf;
 import engine.inf.examples.Button;
 import engine.inf.examples.TextBox;
+import engine.inf.frame.Frame;
 import game.server.ServerLoader;
-import org.newdawn.slick.Color;
 
 public class Menu {
 
@@ -15,7 +15,7 @@ public class Menu {
     public Menu(Game game){
         this.game = game;
 
-        int interval = 5;//Расстояние между полями
+        int interval = 15;//Расстояние между полями
         int hField = 50;//Высота поля
         int w = 470;//Ширина окна
         int h = hField*2+interval*3;//Высота окна
@@ -26,9 +26,10 @@ public class Menu {
         TextBox tb = new TextBox(x+w/2, y+interval+hField/2, w-interval*2, hField, TextureManager.sys_null);
         ButtonLogin bl = new ButtonLogin(x+w/2, y+interval*2+hField+ hField/2, w-interval*2, hField, TextureManager.sys_null);
 
-        window.setFrame(new Color(0.0f, 0.0f, 1.0f));
-        tb.setFrame(new Color(0.0f, 0.0f, 1.0f));
-        bl.setFrame(new Color(0.0f, 0.0f, 1.0f));
+        Frame imageFrame = new InterfaceFrame(TextureManager.interface_window_degree, TextureManager.interface_window_wall);
+        window.frame = imageFrame;
+        tb.frame = imageFrame;
+        bl.frame = imageFrame;
 
         Global.infMain.infs.add(window);
         Global.infMain.infs.add(tb);

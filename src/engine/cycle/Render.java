@@ -104,8 +104,6 @@ public class Render{
 			GL11.glTexCoord2f(0,1);
 			GL11.glVertex2f(0, height);
 			GL11.glEnd();
-
-			GL11.glEnable(GL11.GL_TEXTURE_2D);
 		}
 
 		//Заливка фона за границами карты
@@ -160,8 +158,6 @@ public class Render{
 			GL11.glVertex2f(0, height);
 			GL11.glEnd();
 		}
-
-		GL11.glEnable(GL11.GL_TEXTURE_2D);
 
 
 		//Обновить главный игровой класс при необходимости

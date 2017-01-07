@@ -26,6 +26,7 @@ public class Sprite extends Rendering{
     	int width=(int)(getWidthTexture()*scale_x);
         int height=(int)(getHeightTexture()*scale_y);
 
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
         GL11.glLoadIdentity();     
 	    GL11.glTranslatef((float) xView, (float) yView, 0);
 	    GL11.glRotatef(Math.round(-directionDraw), 0f, 0f, 1f);
