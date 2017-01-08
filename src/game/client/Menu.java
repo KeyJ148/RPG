@@ -6,6 +6,7 @@ import engine.inf.Inf;
 import engine.inf.examples.Button;
 import engine.inf.examples.TextBox;
 import engine.inf.frame.Frame;
+import engine.inf.frame.ImageFrame;
 import game.server.ServerLoader;
 
 public class Menu {
@@ -26,8 +27,10 @@ public class Menu {
         TextBox tb = new TextBox(x+w/2, y+interval+hField/2, w-interval*2, hField, TextureManager.sys_null);
         ButtonLogin bl = new ButtonLogin(x+w/2, y+interval*2+hField+ hField/2, w-interval*2, hField, TextureManager.sys_null);
 
-        Frame imageFrame = new InterfaceFrame(TextureManager.interface_window_degree, TextureManager.interface_window_wall);
-        window.frame = imageFrame;
+        Frame interfaceFrame = new InterfaceFrame(TextureManager.interface_window_degree, TextureManager.interface_window_wall);
+        window.frame = interfaceFrame;
+
+        Frame imageFrame = new ImageFrame(TextureManager.sys_null, TextureManager.interface_window_wall);
         tb.frame = imageFrame;
         bl.frame = imageFrame;
 
